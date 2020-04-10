@@ -6,7 +6,7 @@ namespace CSharp_Tutorials.Class
 {
     class Introduction
     {
-        public void intro()
+        public void Intro()
         {
             // Prompt user to enter a name.
             Console.WriteLine("Enter your name, please:");
@@ -56,7 +56,6 @@ namespace CSharp_Tutorials.Class
             ulong ul = 123456789012UL;
             Console.WriteLine(ul);
         }
-
         //Types of floats
         public void Float()
         {
@@ -74,6 +73,44 @@ namespace CSharp_Tutorials.Class
             Console.WriteLine("Needs to convert to decimal "+ m1);
             Console.WriteLine("No need to convert "+m2);
         }
+        //Bool
+        public void Bool()
+        {
+            //bool data type example
+            bool thisIsABool = true;
+            Console.WriteLine(thisIsABool);
+        }
+        #region Characters and Strings
+        //Character Types
+        //character as 'char'
+        public void CharactersAndSpecialCharacters()
+        {
+            //This is an example of character
+            char c = 'a';
+            //Examples of Special Characters
+            Console.WriteLine("This is\n newline"); // \n is New line
+            Console.WriteLine("This is \ttab"); // \t is Tab
+            Console.WriteLine("This is a \0 null character"); // \0 is a null character
+            Console.WriteLine("This \ris a Carriage return "); // \r is a Carriage return
+            Console.WriteLine("This is a backslash \\"); // \\ is a backslash 
+        }
+        //Strings
+        public void StringsExample()
+        {
+            //Declaring now, initialize later
+            string someString1;
+            someString1 = "this is a string";
+            //Or initialize when declared - preferable
+            string someString2 = "this is a string";
+
+            string someString3 = "This is a line\nand so is this";
+            Console.WriteLine(someString3);
+
+            string EmptyString = String.Empty; // This is an Empty string, safe from misinterpretation
+        }
+        #endregion
+
+
 
     }
 }

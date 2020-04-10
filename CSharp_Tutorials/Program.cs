@@ -9,7 +9,7 @@ namespace MyNameSpace
         static void Main(string[] args)
         {
             Introduction a = new Introduction();
-            a.Float();            
+            a.StringsExample();            
         }
     }
 }
