@@ -8,8 +8,8 @@ namespace MyNameSpace
         //This is where your program starts.
         static void Main(string[] args)
         {
-            Introduction a = new Introduction();
-            a.StringsExample();            
+            LeapYearDateTime a = new LeapYearDateTime();
+            a.DateTimeFunc();            
         }
     }
 }
