@@ -109,6 +109,59 @@ namespace CSharp_Tutorials.Class
             string EmptyString = String.Empty; // This is an Empty string, safe from misinterpretation
         }
         #endregion
+        #region Declaring Numeric Constants
+        //Table 2-4 Common Constants Declared along with Their Types
+        //Constant Type
+        //1 int
+        //1U unsigned int
+        //1L long int (avoid lowercase l; it’s too much like the digit 1)
+        //1.0 double
+        //1.0F float
+        //1M decimal
+        //true bool
+        //false bool
+        //‘a’ char
+        //‘\n’ char (the character newline)
+        //‘\x123’ char (the character whose numeric value is hex 123)1
+        //“a string” string
+        //“” string (an empty string); same as String.Empty
+        #endregion
+        #region Changing Types: The Cast
+        public void TheCast()
+        {
+            //int intValue = 10;
+            //long longValue;
+            //longValue = intValue; // This is ok and this is called implicit type convertion
+
+            long longValue = 10;
+            int intValue;
+            //intValue = longValue; // This is illegal.
+            intValue = (int)longValue; // But you can do a cast like this example.
+        }
+        #endregion
+        #region Letting the C# Compiler Infer Data Types
+        public void VarExample()
+        {
+            var i = 5;
+            var s = "Hello C# 4.0";
+            var d = 1.0;
+            Console.WriteLine("{0},{1},{2}",i,s,d);
+            //Now the compiler infers the data type for you — it looks at the stuff on the
+            //right side of the assignment to see what type the left side is.
+        }
+        #endregion
+        #region Pulling Strings
+        public void PullingStrings()
+        {
+            String s1 = "abcd"; // Assign a string literal to a String obj.
+            string s2 = s1;     // Assign a String obj to a string variable.
+        }
+        public void StringClassExample()
+        {
+
+        }
+        #endregion
+
 
 
 
