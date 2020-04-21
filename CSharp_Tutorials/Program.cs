@@ -8,8 +8,7 @@ namespace MyNameSpace
         //This is where your program starts.
         static void Main(string[] args)
         {
-            StringCom a = new StringCom();
-            a.LoopingWithStrings();            
+            GettingInput.JoiningStrings();
         }
     }
 }

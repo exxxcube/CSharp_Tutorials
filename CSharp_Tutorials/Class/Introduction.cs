@@ -237,7 +237,199 @@ namespace CSharp_Tutorials.Class
             foreach(var item in favoriteFood)
                 Console.WriteLine(item);
         }
+        public void IsAllUpper()
+        {
+            string favoriteFood = "aaa";
+            bool isUppercase = true;
+            foreach (char c in favoriteFood)
+            {
+                if (!char.IsUpper(c)) // check if the letter is not upper case
+                {
+                    isUppercase = false;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("aaa");
+                }
+            }
+        }
+        public void SearchStrings() 
+        {
+            string favoriteFood = "cheeseburgers";
+            #region IndexOf
+            //IndexOf example
+            //int indexOfLetters = favoriteFood.IndexOf('s');
+            //Console.WriteLine(indexOfLetters);
+            #endregion
+            #region IndexOfAny
+            ////✦ IndexOfAny() takes an array of chars and searches the string for any
+            ////of them, returning the index of the first one found.
+            //char[] charsToLookFor = { 'a','b','c' };
+            //int indexOfFirstFound = favoriteFood.IndexOfAny(charsToLookFor);
+            //Console.WriteLine(indexOfFirstFound);
+            ////or you can use this example below
+            //int index = favoriteFood.IndexOfAny(new char[] { 'a', 'b', 'c' });
+            #endregion
+            #region LastIndexOf
+            ////LastIndexOf() finds not the first occurrence of a character but the last.
+            //int index = favoriteFood.LastIndexOf('s'); // the answer is 12
+            //Console.WriteLine(index);
+            #endregion
+            #region LastIndexOfAny
+            ////LastIndexOfAny() works like IndexOfAny(), but starting at the end
+            ////of the string.
+            //int index = favoriteFood.LastIndexOfAny(new char[] { 'a','b','c'});
+            //Console.WriteLine(index);
+            #endregion
+            #region Contains
+            ////Contains() returns true if a given substring can be found within the
+            ////target string:            
+            //Console.WriteLine(favoriteFood.Contains('c').ToString());
+            #endregion
+            #region Substring
+            //string sub = favoriteFood.Substring(6, favoriteFood.Length - 6);
+            //Console.WriteLine(sub);
+            #endregion
+            #region IsNullOrEmpty
+            ////How can you tell if a target string is empty(“”) or has the value null ?
+            ////(null means that no value has been assigned yet, not even to the empty
+            ////string.) Use the IsNullOrEmpty() method, like this:
+            //bool notThere = string.IsNullOrEmpty(favoriteFood);
+            //Console.WriteLine(notThere);
+            ////Or you can do this also
+            ////string name = "";                     
+            //string name = string.Empty;
+            #endregion
+        }
     }
     #endregion
+    #region Getting Input from the Command Line
+    class GettingInput
+    {
+        public void TrimmingWhiteSpace()
+        {
+            string example = "asdlkad alskhd";
+            // Get rid of any extra spaces on either end of the string.
+            string rslt = example.Trim();
+            Console.WriteLine(rslt);
+        }
+        public void ParsingNumericInput()
+        {
+            string s = Console.ReadLine(); // Keyboard input is string data
+            int n = Convert.ToInt32(s); // but you know it’s meant to be a number.
+                                        // this is called Parsing.
+        }
+        // IsAllDigits -- Return true if all characters
+        // in the string are digits.
+        public static bool IsAllDigits(string raw)
+        {
+            // First get rid of any benign characters at either end;
+            // if there’s nothing left, you don’t have a number.
+            string s = raw.Trim(); // Ignore white space on either side.
+            if (s.Length == 0) return false;
+            // Loop through the string.
+            for (int index = 0; index < s.Length; index++)
+            {
+                // A nondigit indicates that the string probably isn’t a number.
+                if (char.IsDigit(s[index]) == false) return false;
+            }
+            // No nondigits found; it’s probably okay.
+            return true;
+        }
+        public static void CheckAndPrintIsAllDigits()
+        {
+            // Input a string from the keyboard.
+            Console.WriteLine("Enter an integer number");
+            string s = Console.ReadLine();
+            // First check to see if this could be a number.
+            if (!IsAllDigits(s)) // Call the special method.
+            {
+                Console.WriteLine("Hey! That isn’t a number");
+            }
+            else
+            {
+                // Convert the string into an integer.
+                int n = Int32.Parse(s);
+                //int n;
+                //Int32.TryParse(s, out n);
+                // Now write out the number times 2.
+                Console.WriteLine("2 * " + n + ", = " + (2 * n));
+            }
+            // Wait for user to acknowledge the results.
+            Console.WriteLine("Press Enter to terminate...");
+            Console.Read();
+        }
+        public void TryCatch_IsNumber()
+        {
+            while (true)
+            {
+                try
+                {
+                    string s = Console.ReadLine();
+                    int n = Convert.ToInt32(s);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    Console.Clear();
+                }
+            }
+        }
+        public static void Split()
+        {
+            string input = "e,x,a,m,p,l,e";
+            string[] rslt = input.Split(',');// string will split if it has , on it.
+            foreach(var item in rslt)
+                Console.WriteLine(item);
+        }
+        public static void HandlingSeriesOfNumbers_Split()
+        {
+            // Prompt the user to input a sequence of numbers.
+            Console.WriteLine("Input a series of numbers separated by commas:");
+            // Read a line of text.
+            string input = Console.ReadLine();
+            Console.WriteLine();
+            // Now convert the line into individual segments
+            // based upon either commas or spaces.
+            char[] dividers = {',', ' '};
+            string[] segments = input.Split(dividers);
+            // Convert each segment into a number.
+            int sum = 0;
+            foreach (string s in segments)
+            {
+                // Skip any empty segments.
+                if (s.Length > 0)
+                {
+                    // Skip strings that aren’t numbers.
+                    if (IsAllDigits(s))
+                    {
+                        // Convert the string into a 32-bit int.
+                        int num = 0;
+                        if (Int32.TryParse(s, out num))
+                        {
+                            Console.WriteLine("Next number = {0}", num);
+                            // Add this number into the sum.
+                            sum += num;
+                        }
+                        // If parse fails, move on to next number.
+                    }
+                }
+            }
+            // Output the sum.
+            Console.WriteLine("Sum = {0}", sum);
+            // Wait for user to acknowledge the results.
+            Console.WriteLine("Press Enter to terminate...");
+            Console.Read();
+        }
+        public static void JoiningStrings()
+        {
+            string[] brothers = { "Chuck", "Bob", "Steve", "Mike" };
+            string theBrothers = string.Join(":", brothers);
+            Console.WriteLine(theBrothers);
+        }
+    }
+    #endregion
+
 
 }
