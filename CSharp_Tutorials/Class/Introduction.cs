@@ -193,7 +193,7 @@ namespace CSharp_Tutorials.Class
     {
         public String Name;
     }
-    #endregion
+    
     #region Comparing Strings, Looping with Strings
     class StringCom
     {
@@ -380,7 +380,7 @@ namespace CSharp_Tutorials.Class
         {
             string input = "e,x,a,m,p,l,e";
             string[] rslt = input.Split(',');// string will split if it has , on it.
-            foreach(var item in rslt)
+            foreach (var item in rslt)
                 Console.WriteLine(item);
         }
         public static void HandlingSeriesOfNumbers_Split()
@@ -392,7 +392,7 @@ namespace CSharp_Tutorials.Class
             Console.WriteLine();
             // Now convert the line into individual segments
             // based upon either commas or spaces.
-            char[] dividers = {',', ' '};
+            char[] dividers = { ',', ' ' };
             string[] segments = input.Split(dividers);
             // Convert each segment into a number.
             int sum = 0;
@@ -428,7 +428,183 @@ namespace CSharp_Tutorials.Class
             string theBrothers = string.Join(":", brothers);
             Console.WriteLine(theBrothers);
         }
-    }
+        public static void PadRight()
+        {
+            string name = "example";
+            Console.WriteLine(name.PadRight(10) + "hello");
+        }
+        public static void UsingTrimAndPadMethods()
+        {
+            List<string> names = new List<string> { "Christa ",
+                                                    " Sarah",
+                                                    "Jonathan",
+                                                    "Sam",
+                                                    " Schmekowitz" };
+            //First output the names as they start out.
+            Console.WriteLine("The following names are of "
+                               + "different lengths");
+            foreach (string s in names)
+            {
+                Console.WriteLine("This is the name'" + s + "' before");
+            }
+            Console.WriteLine();
+
+            //This time, fix the strings so they are
+            //left justified and all the same length.
+            //First, copy the source array into an array thay you can manipulate.
+            List<string> stringsToAlign = new List<string>();
+            //At the same time, remove any unnecessary space from either end 
+            //of the names.
+            for (int i = 0; i < names.Count; i++)
+            {
+                string trimmedName = names[i].Trim(); // You can use name[index] to access individual strings
+                stringsToAlign.Add(trimmedName);
+            }
+            //Now find the length of the longest string so that
+            //all other strings line up with that string.
+            int maxLength = 0;
+            foreach (string s in stringsToAlign)
+            {
+                if (s.Length > maxLength)
+                {
+                    maxLength = s.Length;
+                }
+            }
+            // Now justify all the strings to the length of the maximum string.
+            for (int i = 0; i < stringsToAlign.Count; i++)
+            {
+                stringsToAlign[i] = stringsToAlign[i].PadRight(maxLength + 1);
+            }
+            // Finally output the resulting padded, justified strings.
+            Console.WriteLine("The following are the same names"
+                                + " normalized to the same length");
+            foreach (string s in stringsToAlign)
+            {
+                Console.WriteLine("This is the name '" + s + "' afterwards");
+            }
+            // Wait for user to acknowledge.
+            Console.WriteLine("\nPress Enter to terminate...");
+            Console.Read();
+        }
+        public static void ReplaceMethod()
+        {
+            string s = "Danger NoSmoking";            
+            s = s.Replace(' ', '!');
+            Console.WriteLine(s);
+        }
+        public static void RemoveWhiteSpace()
+        {
+            // Define the white space characters.
+            char[] whiteSpace = { ' ', '\n','\t'};
+            // Start with a string embedded with whitespace.
+            string s = " this is a\nstring"; // Contains spaces & newline.
+            Console.WriteLine("before:" +s);
+            // Output the string with the whitespace missing.
+            Console.WriteLine("after:");
+            // Start looking for the white space characters.
+            for (; ; )
+            {
+                // Find the offset of the character; exit the loop
+                // if there are no more.
+                int offset = s.IndexOfAny(whiteSpace);
+                if (offset == -1)
+                {
+                    break;
+                }
+                // Break the string into the part prior to the
+                // character and the part after the character.
+                string before = s.Substring(0, offset);
+                string after = s.Substring(offset + 1);
+                // Now put the two substrings back together with the
+                // character in the middle missing.
+                s = string.Concat(before, after);
+                // Loop back up to find next whitespace char in
+                // this modified s.
+                Console.WriteLine(s);
+                // Wait for user to acknowledge the results.
+                Console.WriteLine("Press Enter to terminate...");
+                Console.Read();
+            }
+        }
+        public static string RemoveWhiteSpaceWithSplit(string input, char[] targets)
+        {
+            // Split the input string up using the target
+            // characters as the delimiters.
+            string[] subStrings = input.Split(targets);
+
+            // output will contain the eventual output information.
+            string output = "";
+
+            // Loop through the substrings originating from the split.
+            foreach (string subString in subStrings)
+            {
+                output = String.Concat(output, subString);
+            }
+
+            return output;
+        }
+        #region Formatting Your Strings Precisely
+        public static void StringFormat()
+        {
+            //Example of Format in String
+            //string myString = String.Format("{0} times {1} equals {2}", 2, 5, 2 * 5);
+            //Console.WriteLine(myString);
+
+            //Format Specifiers Using String.Format()
+            //C — currency
+            //string myString = String.Format("{0:C}",123.456);
+            //Console.WriteLine(myString);
+            //D — decimal {0:D5} of 123 00123 Integers only
+            //E — exponential { 0:E} of 123.45 1.2345E+002 Also known as scientific notation.
+            //F — fixed {0:F2} of 123.4567, 123.45,  The number after the F indicates 
+            //the number of digits after the decimal point.
+            //N — number    { 0:N} of 123456.789 123,456.79 Adds commas and rounds off to nearest 100th.
+            //              {0:N1} of 123456.789 123,456.8 Controls the number of digits after the decimal point.
+            //              {0:N0} of 123456.789 123,457
+            //X — hexadecimal   { 0:X} of 123 0x7B 7B hex = 123 decimal(integers only).
+            //                  {0:0...} {0:000.00} of 12.3 012.30 Forces a 0 if a digit is not
+            //                                                     already present.
+            //                  {0:#...} {0:###.##} of 12.3 12.3 Forces the space to be left blank; 
+            //                                                   no other field can encroach on the three
+            //                                                   digits to the left and two digits after
+            //                                                   the decimal point
+            //                                                   (useful for maintaining decimalpoint
+            //                                                    alignment).
+            //{0:##0.0#} of 0 0.0 Combining the # and zeros forces space to be
+            //                    allocated by the #s and forces at least one
+            //                    digit to appear, even if the number is 0.
+            //{0:# or 0 %} {0:#00.#%} of .1234 12.3%, The % displays the number as a percentage
+            //                                        (multiplies by 100 and adds the % sign).
+
+        }
+        public static void StringFormatOutput(string s)
+        {
+            decimal val;
+            int i;
+            if (decimal.TryParse(s, out val))
+            {
+                Console.WriteLine("Currency ---> " + String.Format("{0:C}", val));
+                Console.WriteLine("Exponent ---> " + String.Format("{0:E}", val));
+                Console.WriteLine("Fix ---> " + String.Format("{0:F2}", val));
+                Console.WriteLine("Number ---> " + String.Format("{0:N}", val));
+                Console.WriteLine("Number ---> " + String.Format("{0:N1}", val));
+                Console.WriteLine("Number ---> " + String.Format("{0:N0}", val));
+                Console.WriteLine("Number ---> " + String.Format("{0:000.00}", val));
+                Console.WriteLine("Number ---> " + String.Format("{0:###.##}", val));
+                Console.WriteLine("Number ---> " + String.Format("{0:##0.0#}", val));
+                Console.WriteLine("Percent ---> " + String.Format("{0:#00.#%}", val));
+            }
+            if (int.TryParse(s, out i))
+            {
+                Console.WriteLine("Decimal ---> " + String.Format("{0:D5}", i));
+                Console.WriteLine("Hexadecimal ---> " + String.Format("{0:X}", i));
+            }            
+        }
+        #endregion
+    }       
+    #endregion
+
+
     #endregion
 
 
