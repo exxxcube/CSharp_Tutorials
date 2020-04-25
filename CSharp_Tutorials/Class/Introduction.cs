@@ -6,10 +6,7 @@ namespace CSharp_Tutorials.Class
 {
     #region Data Types Example
     class Introduction
-    {
-       
-
-        
+    {               
         public void Intro()
         {
             // Prompt user to enter a name.
@@ -601,10 +598,87 @@ namespace CSharp_Tutorials.Class
             }            
         }
         #endregion
-    }       
+        #region StringBuilder: Manipulating Strings More Efficiently
+        public static void StringBuilder()
+        {
+            //StringBuilder builder = new StringBuilder("012");  // Defaults to 16 characters
+            //StringBuilder otherbuilder = new StringBuilder(256);  // 256 characters.
+            //builder.Append("34");
+            //builder.Append("56");
+            //string result = builder.ToString();  // result = 0123456
+            //Console.WriteLine(result);                        
+        }
+        #endregion
+    }
     #endregion
+    #endregion
+    #region Smooth Operators
+    class Operators
+    {
+        public static void SimpleOperators(int n,int i)
+        {
+            //  Operator                  What It Means
+            //------------------------------------------------
+            //  – (unary)                 Take the negative of
+            //  *                         Multiply
+            //  /                         Divide
+            //  +                         Add
+            //  - (binary)                Subtract
+            //  %                         Modulo
+            //------------------------------------------------
+            //int n = (7 % 3) * (4 + (6 / 3));
+            //Console.WriteLine(n);            
+            int rslt;
+            Console.WriteLine("Add: {0}", rslt = n + i);
+            Console.WriteLine("Subtract: {0}", rslt = n - i);
+            Console.WriteLine("Multiply: {0}", rslt = n * i);
+            Console.WriteLine("Divide: {0}", rslt = n / i);
+            Console.WriteLine("Modulo: {0}", rslt = n % i);
+        }
+        public static void Assignment(int n)
+        {
+            int rslt = n;
+            //Assignment
+            //int i = 0; // = is an assignment
+            Console.WriteLine("{0}", rslt += 1);
+            Console.WriteLine("{0}", rslt -= 1);
+            Console.WriteLine("{0}", rslt *= 1);
+            Console.WriteLine("{0}", rslt /= 1);
+            Console.WriteLine("{0}", rslt %= 1);
+            Console.WriteLine("{0}", rslt &= 1);
+            Console.WriteLine("{0}", rslt |= 1);
+            Console.WriteLine("{0}", rslt ^= 1);
+        }
+        public static void Increment()
+        {
+            //Increment
+            int j = 0;
+            j = j + 1;  // Increment Example
+            j += 1;     // Increment Example
+            j++;        // PostIncrement Example
+            ++j;        // PreIncrement Example
+        }
+        public static void LogicalComparisons()
+        {
+            //  Operator              Operator Is True If
+            //
+            //  a == b                a has the same value as b
+            //  a > b                 a is greater than b
+            //  a >= b                a is greater than or equal to b
+            //  a < b                 a is less than b
+            //  a <= b                a is less than or equal to b
+            //  a != b                a is not equal to b
 
-
+            int a = 1, b = 2;
+            Console.WriteLine("The numbers are {0} and {1}",a,b);
+            Console.WriteLine("Is a equal than b?            {0}",a == b);
+            Console.WriteLine("Is a greater than b?          {0}", a > b);
+            Console.WriteLine("Is a greater than equal to b? {0}", a >= b);
+            Console.WriteLine("Is a less than b?             {0}", a < b);
+            Console.WriteLine("Is a less than equal to b?    {0}", a <= b);
+            Console.WriteLine("Is a not equal to b?          {0}", a != b);
+        }
+    }
     #endregion
 
 
