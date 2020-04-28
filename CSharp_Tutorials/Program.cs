@@ -8,7 +8,7 @@ namespace MyNameSpace
         //This is where your program starts.
         static void Main(string[] args)
         {
-            Operators.LogicalComparisons();
+            ProgramFlow.CalculateInterest();
         }
     }
 }

@@ -615,7 +615,7 @@ namespace CSharp_Tutorials.Class
     #region Smooth Operators
     class Operators
     {
-        public static void SimpleOperators(int n,int i)
+        public static void SimpleOperators(int n, int i)
         {
             //  Operator                  What It Means
             //------------------------------------------------
@@ -658,7 +658,7 @@ namespace CSharp_Tutorials.Class
             j++;        // PostIncrement Example
             ++j;        // PreIncrement Example
         }
-        public static void LogicalComparisons()
+        public static void LogicalComparisonsOperators()
         {
             //  Operator              Operator Is True If
             //
@@ -670,16 +670,156 @@ namespace CSharp_Tutorials.Class
             //  a != b                a is not equal to b
 
             int a = 1, b = 2;
-            Console.WriteLine("The numbers are {0} and {1}",a,b);
-            Console.WriteLine("Is a equal than b?            {0}",a == b);
+            Console.WriteLine("The numbers are {0} and {1}", a, b);
+            Console.WriteLine("Is a equal than b?            {0}", a == b);
             Console.WriteLine("Is a greater than b?          {0}", a > b);
             Console.WriteLine("Is a greater than equal to b? {0}", a >= b);
             Console.WriteLine("Is a less than b?             {0}", a < b);
             Console.WriteLine("Is a less than equal to b?    {0}", a <= b);
             Console.WriteLine("Is a not equal to b?          {0}", a != b);
         }
+        public static void CompoundLogicalOperators()
+        {
+            //  Operator                  Operator Is True If
+            //  !a                        a is false (also known as the “not” operator).
+            //  a & b                     a and b are true (also known as the “and” operator).
+            //  a | b                     Either a or b or else both are true (also known as a and/or b).
+            //  a ^ b                     a is true or b is true but not both (also known as a xor b).
+            //  a && b                    a is true and b is true with short-circuit evaluation.
+            //  a || b                    a is true or b is true with short-circuit evaluation.
+            bool a = true, b = true;
+            Console.WriteLine("{0}", !a);
+            Console.WriteLine("{0}", a & b);
+            Console.WriteLine("{0}", a | b);
+            Console.WriteLine("{0}", a ^ b);
+            Console.WriteLine("{0}", a && b);
+            Console.WriteLine("{0}", a || b);
+        }
+        public static void ExplicitCasting()
+        {
+            int n1 = 10;
+            int n2 = (int)(5.0 * n1); //demote to int while compute the variables as double * double
+        }
     }
     #endregion
+    #region Getting Into the Program FlowMyRegion
+    class ProgramFlow
+    {
+        //A Program Without condition
+        public static void Prog()
+        {
+            // Prompt user to enter a name.      
+            Console.WriteLine("Enter your name, please:");
+            // Now read the name entered.      
+            string name = Console.ReadLine();
+            // Greet the user with the entered name.      
+            Console.WriteLine("Hello, " + name);
+            // Wait for user to acknowledge the results.      
+            Console.WriteLine("Press Enter to terminate . . . ");
+            Console.Read();
+        }
+        public static void CalculateInterest()
+        {
+            // Prompt user to enter source principal.
+            Console.WriteLine("Enter principal: ");
+            string principalInput = Console.ReadLine();
+            decimal principal = Convert.ToDecimal(principalInput);
+            // Make sure that the principal is not negative.
+            if (principal < 0)
+            {
+                Console.WriteLine("Principal cannot be negative");
+                principal = 0;
+            }
+            // Enter the interest rate.
+            Console.WriteLine("Enter interest: ");
+            string interestInput = Console.ReadLine();
+            decimal interest = Convert.ToDecimal(interestInput);
+            // Make sure that the interest is not negative either.
+            if (interest < 0)
+            {
+                Console.WriteLine("Interest cannot be negative");
+                interest = 0;
+            }
+            // Calculate the value of the principal plus interest.
+            decimal interestPaid = principal * (interest / 100);
+            // Now calculate the total.
+            decimal total = principal + interestPaid;
+            // Output the result.
+            Console.WriteLine(); // Skip a line
+            Console.WriteLine("Principal     = " + principal);
+            Console.WriteLine("Interest      = "+ interest + "%");
+            Console.WriteLine();
+            Console.WriteLine("Interest paid = "+ interestPaid);
+            Console.WriteLine("Total         = "+ total);
+            // Wait for user to acknowledge the results.
+            Console.WriteLine("Press Enter to terminate...");
+            Console.Read();
+        }
+        public static void ElseStatement()
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+            if (n > 0) Console.WriteLine("n is Positive");
+            else Console.WriteLine("n is negative"); // This is the Else Example
+        }
+        public static void TernaryOperator()
+        {
+            bool informal = true;
+            string name = informal ? "Chuck" : "Charles";
+        }
+        public static void NestedIf()
+        {
+            if (true)
+            {
+                if (true)
+                {
 
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+        }
+        public static void SwitchStatement()
+        {
+            #region SimpleSwitchStatement
+            const string a = "Davis";
+            string s = "Davis";
+            switch (s)
+            {
+                case a:
+                    Console.WriteLine("Correct");
+                    break;
+                case "John":
+                    Console.WriteLine("Wrong");
+                    break;
+                case "Exxxcube":
+                    Console.WriteLine("Wrong");
+                    break;
+                case "Keneth":
+                    Console.WriteLine("Wrong");
+                    break;
+            }
+            #endregion
+            #region SwitchStatement: Two case lead to the same actions
+            string l = "David";
+            switch (l)
+            {
+                case "David":
+                case "John":
+                    Console.WriteLine("Correct");
+                    break;
+                case "":
+                    Console.WriteLine("Wrong");
+                    break;
+            }
+            #endregion
+        }
+    }
+    #endregion
 
 }
