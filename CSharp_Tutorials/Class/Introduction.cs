@@ -702,7 +702,7 @@ namespace CSharp_Tutorials.Class
         }
     }
     #endregion
-    #region Getting Into the Program FlowMyRegion
+    #region Getting Into the Program Flow
     class ProgramFlow
     {
         //A Program Without condition
@@ -837,6 +837,29 @@ namespace CSharp_Tutorials.Class
             //for (initExpression; condition; incrementExpression)
             //{    // . . . body of code . . .}
             //}
+
+            //Nesting Loops
+            //for ( . . .some condition. . .)
+            //{
+            //    for ( . . .some other condition. . .)
+            //    {
+            //        // . . . do whatever . . .
+            //    }
+            //}
+        }
+        public static void GotoStatement()
+        {
+            int i = 0,j = 1;
+            if (i > j)
+            {
+                // . . . control passes unconditionally from the goto to the label.
+                goto exitLabel;
+            }
+            // . . . whatever other code goes here . . .
+
+            exitLabel:
+            Console.WriteLine("Here...");
+            // Control continues here.
         }
         public static void CalculateInterestTable()
         {
@@ -976,6 +999,254 @@ namespace CSharp_Tutorials.Class
             Console.Read();
         }
     }
+    #endregion
+    #region Lining Up Your Ducks with Collections
+    class Collections
+    {
+        public static void CSharpArray()
+        {
+            ////Fixed-value array
+            //double[] doublesArray = { 5, 2, 7, 3.5, 6.5, 8, 1, 9, 1, 3 };
+
+            ////Empty array without initializing
+            //double[] doublesEmptyArray = new double[6];
+
+            //The following lines show an array with its initializer
+            //and then one that allocates space but doesn’t initialize the 
+            //elements’ values:
+            double[] fixedLengthArray = { 5, 2, 7, 3.5, 6.5, 8, 1, 9, 1, 3 };
+            double[] variableLengthArray = new double[10];
+            //or you can do both
+            double[] fixedLengthArrayBoth = new double[10] { 5, 2, 7, 3.5, 6.5, 8, 1, 9, 1, 3 };
+        }
+        public static void FixedArrayAverage()
+        {
+            double[] doublesArray = { 5, 2, 7, 3.5, 6.5, 8, 1, 9, 1, 3 };
+            // Accumulate the values in the array into the variable sum.
+            double sum = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                sum = sum + doublesArray[i];
+            }
+            // Now calculate the average.
+            double average = sum / 10;
+            Console.WriteLine(average);
+            Console.WriteLine("Press Enter to terminate ...");
+            Console.Read();
+        }
+        public static void VariableArrayAverage()
+        {
+            // First read in the number of doubles the user intends to enter.
+            Console.Write("Enter the number of values to average: ");
+            string numElementsInput = Console.ReadLine();
+            int numElements = Convert.ToInt32(numElementsInput);
+            Console.WriteLine();
+            // Now declare an array of that size.
+            double[] doublesArray = new double[numElements];
+            // Accumulate the values into an array.
+            for (int i = 0; i < numElements; i++)
+            {
+                // Prompt the user for another double.
+                Console.WriteLine("enter double #"+ (i+1) +": ");
+                string val = Console.ReadLine();
+                double value = Convert.ToDouble(val);
+                // Add this to the array using bracket notation.
+                doublesArray[i] = value;
+            }
+            // Accumulate ‘numElements’ values from
+            // the array in the variable sum.
+            double sum = 0;
+            for (int i = 0; i < numElements; i++)
+            {
+                sum = sum + doublesArray[i];
+            }
+            // Now calculate the average.
+            double average = sum / numElements;
+            // Output the results in an attractive format.
+            Console.WriteLine();
+            Console.Write(average+ " is the average of (");
+            for (int i = 0; i < numElements; i++)
+            {
+                Console.Write(doublesArray[i]+ "+");
+            }
+            Console.WriteLine(") / "+ numElements);
+            // Wait for user to acknowledge the results.
+            Console.WriteLine("Press Enter to ternimate...");
+            Console.WriteLine();
+        }
+        public static void ForeachExample()
+        {
+            int[] arrayOfItems = { 1,2,3,4,5,6,7,8,9,10 };
+            foreach (var item in arrayOfItems)
+            {
+                Console.WriteLine(item); // print the elements of the array.
+            }
+        }       
+        public static void ArraySortMethodExample()
+        {
+            // BubbleSortArray -- Given a list of planets, sort their
+            // names: first, in alphabetical order.
+            // Second, by the length of their names, shortest to longest.
+            // Third, from longest to shortest.
+            // This demonstrates using and sorting arrays, working with
+            // them by array index. Two sort algorithms are used:
+            // 1. The Sort algorithm used by class Array’s Sort() method.
+            // 2. The classic Bubble Sort algorithm.
+            Console.WriteLine("The 5 planets closest to the sun, in order: ");
+            string[] planets = 
+                        new string[] { "Mercury", "Venus", "Earth", "Mars", "Jupiter" };
+            foreach (string planet in planets)
+            {
+                // Use the special char \t to insert a tab in the printed line.
+                Console.WriteLine("\t",planet);
+            }
+            Console.WriteLine("\nNow listed alphabetically: ");
+            // Array.Sort() is a method on the Array class.
+            // Array.Sort() does its work in-place in the planets array,
+            // which leaves you without a copy of the original array. The
+            // solution is to copy the old array to a new one and sort it.
+            string[] sortedNames = planets;
+            Array.Sort(sortedNames);
+            // This demonstrates that (a) sortedNames contains the same
+            // strings as planets and (b) that they’re now sorted.
+            foreach (string planet in sortedNames)
+            {
+                Console.WriteLine("\t"+planet);
+            }            
+        }
+        public static void BubbleSortExample()
+        {
+            Console.WriteLine("\nList by name length - shortest first: ");
+            // This algorithm is called “Bubble Sort”: It’s the simplest
+            // but worst-performing sort. The Array.Sort() method is much
+            // more efficient, but I couldn’t use it directly to sort the
+            // planets in order of name length because it sorts strings,
+            // not their lengths.
+            string[] planets =
+                        new string[] { "Mercury", "Venus", "Earth", "Mars", "Jupiter" };
+            int outer; // Index of the outer loop
+            int inner; // Index of the inner loop
+            // Loop DOWN from last index to first: planets[4] to planets[0].
+            for (outer = planets.Length - 1; outer >= 0 ; outer--)
+            {
+                // On each outer loop, loop through all elements BEYOND the
+                // current outer element. This loop goes up, from planets[1]
+                // to planets[4]. Using the for loop, you can traverse the
+                // array in either direction.
+                for (inner = 1; inner <= outer; inner++)
+                {
+                    // Compare adjacent elements. If the earlier one is longer
+                    // than the later one, swap them. This shows how you can
+                    // swap one array element with another when they’re out of order.
+                    if (planets[inner - 1].Length > planets[inner].Length)
+                    {
+                        // Temporarily store one planet.
+                        string temp = planets[inner - 1];
+                        // Now overwrite that planet with the other one.
+                        planets[inner - 1] = planets[inner];
+                        // Finally, reclaim the planet stored in temp and put
+                        // it in place of the other.
+                        planets[inner] = temp;
+                    }
+                }                
+            }
+            foreach (string planet in planets)
+            {
+                Console.WriteLine("\t"+planet);
+            }
+            Console.WriteLine("\nNow listed longest first: ");
+            // That is, just loop down through the sorted planets.
+            for (int i = planets.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine("\t"+planets[i]);                
+            }
+            Console.WriteLine("\nPress Enter to terminate...");
+            Console.Read();
+        }
+        public static void VarExample()
+        {
+            // myArray is an int[] with 6 elements.
+            var myArray = new[] { 2, 3, 5, 7, 11, 13 }; // Initializer required!
+        }
+        public static void CollectionListOfExamples()
+        {
+            //  Class                         Description
+            //
+            //  List<T>                       This dynamic array contains objects of type T.
+            //  LinkedList<T>                 This is a linked list of objects of type T.
+            //  Queue<T>                      Start at the back end of the line and
+            //                                end up at the front.
+            //  Stack<T>                      Always add or delete items at the
+            //                                “top” of the list,
+            //                                like a stack of cafeteria trays.
+            //  Dictionary<TKey,TValue >      This structure works like a dictionary.
+            //                                Look up a key (a word, for example)
+            //                                and retrieve its corresponding value
+            //                                (for example, definition).
+            // HashSet<T>                     This structure resembles a mathematical set,
+            //                                with no duplicate items. It works much like a
+            //                                list but provides mathematical set operations,
+            //                                such as union and intersection.
+
+            //Figuring out <T>
+            List<int> intList = new List<int>();  // Instantiating for int
+            //Instantiate is geekspeak for “Create an object (instance) of this type.”
+        }
+        public static void UsingList()
+        {
+            //List<MP3> myMP3s = new List<MP3>();   // An empty list
+            //myMP3s.Add(new MP3(“Avril Lavigne”)); // Call the list’s Add() method to add.
+            // ... and so on.
+
+            //// List<T>: note angle brackets plus parentheses in
+            //// List<T> declaration; T is a “type parameter”,
+            //// List<T> is a “parameterized type.”
+            //// Instantiate for string type.
+            //List<string> nameList = new List<string>();
+            //nameList.Add("one");
+            List<int> intList = new List<int>();
+            intList.Add(3);                         // Fine.
+            intList.Add(4);
+            Console.WriteLine("Printing intList: ");
+            foreach (int i in intList)              // foreach just works for all collections.
+            {
+                Console.WriteLine("int i = "+ i);
+            }
+        }
+        public static void UsingListWithClassStudentsList()
+        {
+            List<StudentsList> studentList = new List<StudentsList>();
+            StudentsList student1 = new StudentsList("Virgil");
+            StudentsList student2 = new StudentsList("Finch");
+            studentList.Add(student1);
+            studentList.Add(student2);
+            StudentsList[] anotherStudents = { new StudentsList("Mox"), new StudentsList("Fox") };
+            studentList.AddRange(anotherStudents);   // Add whole array to List.
+            Console.WriteLine("Num students in studentList = "+ studentList.Count);
+
+            // Search with IndexOf().
+            Console.WriteLine("Student2 at "+ studentList.IndexOf(student2));
+            string name = studentList[3].Name;
+            if (studentList.Contains(student1))
+            {
+                Console.WriteLine(student1.Name +" contained in list");
+            }
+            //Console.WriteLine("This is sorted");
+            //studentList.Sort();            
+            studentList.Insert(3, new StudentsList("Ross")); // Inserted new value in index 3.
+            studentList.RemoveAt(3); // Deletes the third element.
+            Console.WriteLine("removed "+ name); // Name defined above
+        }
+    }
+    class StudentsList
+    {
+        public string Name;
+
+        public StudentsList(string v)
+        {
+            this.Name = v;
+        }
+    } //This class is for UsingListWithClassStudentsList()
     #endregion
 
 }

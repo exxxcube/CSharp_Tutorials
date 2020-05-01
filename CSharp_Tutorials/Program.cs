@@ -1,4 +1,5 @@
 ﻿using CSharp_Tutorials.Class;
+using CSharp_Tutorials.Exercises;
 using System;
 
 namespace MyNameSpace
@@ -8,7 +9,8 @@ namespace MyNameSpace
         //This is where your program starts.
         static void Main(string[] args)
         {
-            ProgramFlow.CalculateInterestTableWithBreakAndContinue();
+            //Collections.UsingListWithClassStudentsList();
+            CodeExecises.TemperatureConverter();
         }
     }
 }
