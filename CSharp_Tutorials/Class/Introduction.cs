@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Text;
+using System.IO;
 
 namespace CSharp_Tutorials.Class
 {
@@ -49,7 +50,7 @@ namespace CSharp_Tutorials.Class
             uint un = 3234567890U;
             Console.WriteLine(un);
 
-            //long, 8 bytes, –10^20 to 10^20 — “a whole lot”
+            //long, 8 bytes, –10^20 to 10^20 — "a whole lot”
             long l = 123456789012L;
             Console.WriteLine(l);
 
@@ -125,8 +126,8 @@ namespace CSharp_Tutorials.Class
         //‘a’ char
         //‘\n’ char (the character newline)
         //‘\x123’ char (the character whose numeric value is hex 123)1
-        //“a string” string
-        //“” string (an empty string); same as String.Empty
+        //"a string” string
+        //"” string (an empty string); same as String.Empty
         #endregion
     #region Changing Types: The Cast
         public void TheCast()
@@ -166,7 +167,7 @@ namespace CSharp_Tutorials.Class
             // Now make a new object with the same name.
             Student s2 = new Student();
             s2.Name = s1.Name;
-            // “Changing” the name in the s1 object does not
+            // "Changing” the name in the s1 object does not
             // change the object itself because ToUpper() returns
             // a new string without modifying the original.
             s2.Name = s1.Name.ToUpper();
@@ -289,7 +290,7 @@ namespace CSharp_Tutorials.Class
             //Console.WriteLine(sub);
             #endregion
             #region IsNullOrEmpty
-            ////How can you tell if a target string is empty(“”) or has the value null ?
+            ////How can you tell if a target string is empty("”) or has the value null ?
             ////(null means that no value has been assigned yet, not even to the empty
             ////string.) Use the IsNullOrEmpty() method, like this:
             //bool notThere = string.IsNullOrEmpty(favoriteFood);
@@ -681,8 +682,8 @@ namespace CSharp_Tutorials.Class
         public static void CompoundLogicalOperators()
         {
             //  Operator                  Operator Is True If
-            //  !a                        a is false (also known as the “not” operator).
-            //  a & b                     a and b are true (also known as the “and” operator).
+            //  !a                        a is false (also known as the "not” operator).
+            //  a & b                     a and b are true (also known as the "and” operator).
             //  a | b                     Either a or b or else both are true (also known as a and/or b).
             //  a ^ b                     a is true or b is true but not both (also known as a xor b).
             //  a && b                    a is true and b is true with short-circuit evaluation.
@@ -1117,7 +1118,7 @@ namespace CSharp_Tutorials.Class
         public static void BubbleSortExample()
         {
             Console.WriteLine("\nList by name length - shortest first: ");
-            // This algorithm is called “Bubble Sort”: It’s the simplest
+            // This algorithm is called "Bubble Sort”: It’s the simplest
             // but worst-performing sort. The Array.Sort() method is much
             // more efficient, but I couldn’t use it directly to sort the
             // planets in order of name length because it sorts strings,
@@ -1177,7 +1178,7 @@ namespace CSharp_Tutorials.Class
             //  Queue<T>                      Start at the back end of the line and
             //                                end up at the front.
             //  Stack<T>                      Always add or delete items at the
-            //                                “top” of the list,
+            //                                "top” of the list,
             //                                like a stack of cafeteria trays.
             //  Dictionary<TKey,TValue >      This structure works like a dictionary.
             //                                Look up a key (a word, for example)
@@ -1190,17 +1191,17 @@ namespace CSharp_Tutorials.Class
 
             //Figuring out <T>
             List<int> intList = new List<int>();  // Instantiating for int
-            //Instantiate is geekspeak for “Create an object (instance) of this type.”
+            //Instantiate is geekspeak for "Create an object (instance) of this type.”
         }
         public static void UsingList()
         {
             //List<MP3> myMP3s = new List<MP3>();   // An empty list
-            //myMP3s.Add(new MP3(“Avril Lavigne”)); // Call the list’s Add() method to add.
+            //myMP3s.Add(new MP3("Avril Lavigne”)); // Call the list’s Add() method to add.
             // ... and so on.
 
             //// List<T>: note angle brackets plus parentheses in
-            //// List<T> declaration; T is a “type parameter”,
-            //// List<T> is a “parameterized type.”
+            //// List<T> declaration; T is a "type parameter”,
+            //// List<T> is a "parameterized type.”
             //// Instantiate for string type.
             //List<string> nameList = new List<string>();
             //nameList.Add("one");
@@ -1237,6 +1238,172 @@ namespace CSharp_Tutorials.Class
             studentList.RemoveAt(3); // Deletes the third element.
             Console.WriteLine("removed "+ name); // Name defined above
         }
+        public static void DictionaryExample()
+        {
+            //Example of Dictionary
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            dict.Add("C#", "cool");
+            dict.Add("C++", "like writing Sanskrit poetry in Morse code");
+            dict.Add("VB", "a simple but wordy language");
+            dict.Add("Java", "good, but not C#");
+            dict.Add("Fortran", "ANCNT"); // 6-letters-max variable name for "ancient.”
+            dict.Add("Cobol", "even more wordy, or is it wordier, and verbose than VB");
+            //The ContainsKey() method tells you whether the dictionary contains a
+            //particular key. There’s a corresponding ContainsValue() method too:
+            // See if the dictionary contains a particular key.
+            Console.WriteLine("Using ContainsKey Method: ");
+            Console.WriteLine("Contains key C# " + dict.ContainsKey("C#"));
+            Console.WriteLine("Contains key Ruby " + dict.ContainsKey("Ruby"));
+            // Iterate the dictionary’s contents with foreach.
+            // Note that you’re iterating pairs of keys and values.
+            Console.WriteLine("Contents of the dictionary: ");
+            foreach (KeyValuePair<string, string> pair in dict)
+            {
+                // Because the key happens to be a string,
+                // we can call string methods on it.
+                Console.WriteLine("Key: " + pair.Key.PadRight(8) + "Value: " + pair.Value);
+            }
+            // List the keys, which are in no particular order.
+            Console.WriteLine("\nJust the keys:");
+            // Dictionary<TKey, TValue>.KeyCollection is a collection of just the keys,
+            // in this case strings. So here’s how to retrieve the keys:
+            Dictionary<string, string>.KeyCollection keys = dict.Keys;
+            foreach (string key in keys)
+            {
+                Console.WriteLine("Key: " + key);
+            }
+            // List the values, which are in same order as key collection above.
+            Console.WriteLine("\nJust the values: ");
+            Dictionary<string, string>.ValueCollection values = dict.Values;
+            foreach (string value in values)
+            {
+                Console.WriteLine("Values: " + value);
+            }
+            Console.WriteLine("\nNumber of items in the dictionary: " + dict.Count);
+        }
+        public static void ArrayAndCollectionInitializers()
+        {
+            //Initializing arrays
+            int[] numbers = { 1, 2, 3 };     // Shorter form -- can’t use var.
+            var newNumbers = new[] { 1, 2, 3 }; // Full initializer mandatory with var.
+
+            //Initializing collections
+            List<int> numList = new List<int> { 1, 2, 3, 4, 5 };
+
+            //Initializing collections using var data type
+            var list = new List<string> { "Head", "Heart", "Hands", "Health" };
+
+            //Initializing collections using dynamic data type
+            dynamic dynamicList = new List<string> { "Head", "Heart", "Hands", "Health" };
+
+            //Initializing dictionaries with the new syntax looks like this:
+            Dictionary<int, string> dict = new Dictionary<int, string>
+                                            { { 1,"Sam"} , { 2, "Joe"} };
+        }
+        public static void UsingSets()
+        {
+            //Initializing sets is much like initializing lists:
+            //HashSet<int> biggerPrimes = new HashSet<int> { 19, 23, 29, 31, 37, 41 };
+            //C# 3.0 added the new collection type HashSet<T>.
+            //A set is an unordered collection with no duplicate items.
+
+            //To create a HashSet<T>, you can do this:
+            HashSet<int> smallPrimeNumbers = new HashSet<int>();
+            smallPrimeNumbers.Add(2);
+            smallPrimeNumbers.Add(3);
+            //Or, more conveniently, you can use a collection initializer:
+            HashSet<int> anotherSmallPrimeNumbers = new HashSet<int>
+                                    { 2, 3, 5, 7, 11, 13 };
+            //Or create the set from an existing
+            //collection of any list-like kind, including
+            //arrays:
+            List<int> intList = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7 };
+            HashSet<int> numbers = new HashSet<int>(intList);
+            //the compiler doesn’t treat the duplication as an error(and doesn’t change the
+            //hash set, which can’t have duplicates).Actually, Add() returns true if the
+            //addition occurred and false if it didn’t.You don’t have to use that fact, but it
+            //can be useful if you want to do something when an attempt is made to add a
+            //duplicate:
+            bool successful = smallPrimeNumbers.Add(2);
+            if (successful)
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+        }
+        public static void HashSetExample()
+        {
+            Console.WriteLine("Combining two collections with no duplicates:");
+            List<string> colors = new List<string> {  "red", "orange", "yellow" };
+            string[] moreColors = {  "orange", "yellow", "green", "blue", "violet" };
+            // Want to combine but without any duplicates.
+            // Following is just the first stage ...
+            HashSet<string> combined = new HashSet<string>(colors);
+            // ... now for the second stage.
+            // UnionWith() collects items in both lists that aren’t duplicated,
+            // resulting in a combined collection whose members are all unique.
+            combined.UnionWith(moreColors);
+            foreach (string color in combined)
+            {
+                Console.WriteLine(color);
+            }
+            //Add it to a List
+            Console.WriteLine("\nConverting the combined set to a list:");
+            // Initialize a new List from the combined set above.
+            List<string> spectrum = new List<string>(combined);
+            foreach (string color in spectrum)
+            {
+                Console.WriteLine(color);
+            }
+        }
+        public static void OverlappingList()
+        {
+            Console.WriteLine("Finding the overlap in two lists:");
+            List<string> presidentialCandidates =
+                new List<string> { "Clinton", "Edwards", "Giuliani", "McCain", "Obama",
+                                   "Romney"};
+            List<string> senators = new List<string> { "Alexander", "Boxer", "Clinton",
+                                   "McCain", "Obama", "Snowe"};
+            HashSet<string> senatorsRunning = new HashSet<string>(presidentialCandidates);
+            // IntersectWith() collects items that appear in both lists, eliminates others.
+            senatorsRunning.IntersectWith(senators);
+            foreach (string senator in senatorsRunning)
+            {
+                Console.WriteLine(senator);
+            }
+        }
+        public static void ExceptWithExample()
+        {
+            Console.WriteLine("Excluding items from a list:");
+            Queue<int> queue =
+                new Queue<int>(new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17 });
+            HashSet<int> unique = new HashSet<int> { 1, 3, 5, 7, 9, 11, 13, 15 };
+            // ExceptWith() removes items in unique that are also in queue: 1, 3, 5, 7.
+            unique.ExceptWith(queue);
+            foreach (int n in unique)
+            {
+                Console.WriteLine(n.ToString());
+            }
+        }
+        public static void SymmetricExceptWith()
+        {
+            Console.WriteLine("Finding just the non-overlapping items in two lists: ");
+            Stack<int> stackOne = new Stack<int>(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
+            Stack<int> stackTwo = new Stack<int>(new int[] { 2, 4, 6, 7, 8, 12,10 });
+            HashSet<int> nonoverlapping = new HashSet<int>(stackOne);
+            // SymmetricExceptWith() collects items that are in one collection but not
+            // the other: the items that don’t overlap.
+            nonoverlapping.SymmetricExceptWith(stackTwo);
+            foreach (int n in nonoverlapping)
+            {
+                Console.WriteLine(n.ToString());
+            }
+            Console.WriteLine("Press Enter to terminate...");
+            Console.Read();
+        }        
     }
     class StudentsList
     {
@@ -1248,5 +1415,654 @@ namespace CSharp_Tutorials.Class
         }
     } //This class is for UsingListWithClassStudentsList()
     #endregion
+    #region Stepping through Collections
+    class MoreCollectionExample
+    {
+        public static void IteratingThroughADirectoryOfFiles(string[] args)
+        {
+            // LoopThroughFiles -- Loop through all files contained in a directory;
+            // this time perform a hex dump, though it could have been anything.
+
+            // If no directory name provided...
+            string directoryName;
+            if (args.Length == 0)
+            {
+                // ...get the name of the current directory...
+                directoryName = Directory.GetCurrentDirectory();
+            }
+            else
+            {
+                // ...otherwise, assume that the first argument
+                // is the name of the directory to use.
+                directoryName = args[0];
+            }
+            Console.WriteLine(directoryName);
+
+            // Get a list of all files in that directory.
+            FileInfo[] files = GetFileList(directoryName);
+
+            // Now iterate through the files in that list,
+            // performing a hex dump of each file.
+            foreach (FileInfo file in files)
+            {
+                // Write out the name of the file.
+                Console.WriteLine("\n\nhex dump of file {0}: ",file.FullName);
+
+                // Now "dump” the file to the console.
+                DumpHex(file);
+
+                // Wait before outputting next file.
+                Console.WriteLine("\nenter return to continue to next file");
+                Console.ReadLine();
+            }
+            // That’s it!
+            Console.WriteLine("\nno files left");
+
+            // Wait for user to acknowledge the results.
+            Console.WriteLine("Press Enter to terminate...");
+            Console.Read();
+        }
+        // GetFileList -- Get a list of all files in a specified directory.
+        public static FileInfo[] GetFileList(string directoryName)
+        {
+            // Start with an empty list.
+            FileInfo[] files = new FileInfo[0];
+            try
+            {
+                // Get directory information.
+                DirectoryInfo di = new DirectoryInfo(directoryName);
+
+                // That information object has a list of the contents.
+                files = di.GetFiles();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Directory \"{0}\" invalid",directoryName);
+                Console.WriteLine(e.Message);
+            }
+            return files;
+        }
+        public static void DumpHex(FileInfo file)
+        {
+            // Open the file.
+            FileStream fs;
+            BinaryReader reader;
+            try
+            {
+                fs = file.OpenRead();
+                // Wrap the file stream in a BinaryReader.
+                reader = new BinaryReader(fs);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("\ncan’t read from \"{0}\"",file.FullName);
+                Console.WriteLine(e.Message);
+                return;
+            }
+            // Iterate through the contents of the file one line at a time.
+            for (int line = 1; true; line++)
+            {
+                // Read another 10 bytes across (all that will fit on a single
+                // line) -- return when no data remains.
+                byte[] buffer = new byte[10];
+                // Use the BinaryReader to read bytes.
+                // Note: Using the bare FileStream would have been just as easy in this case.
+                int numBytes = reader.Read(buffer, 0, buffer.Length);
+                if (numBytes == 0)
+                {
+                    return;
+                }
+                // Write out the data just read, in a single line preceded by line number.
+                Console.Write("{0:D3} - ",line);
+                DumpBuffer(buffer, numBytes);
+
+                // Stop every 20 lines so that the data doesn’t scroll
+                // off the top of the Console screen.
+                if ((line % 20) == 0)
+                {
+                    Console.WriteLine("Enter return to continue another 20 lines");
+                    Console.ReadLine();
+                }
+            }
+        }
+        public static void DumpBuffer(byte[] buffer, int numBytes)
+        {
+            for (int index = 0; index < numBytes; index++)
+            {
+                byte b = buffer[index];
+                Console.Write("{0:X2},",b);
+            }
+            Console.WriteLine();
+        }
+        public static void IEnumerableAndIEnumerator()
+        {
+            // IEnumerable<T> looks like this:
+            // interface IEnumerable<T>
+            // {
+            //   IEnumerator<T> GetEnumerator();
+            // }
+
+            // while IEnumerator<T> looks like this:
+            // interface IEnumerator<T>
+            // {
+            //    bool MoveNext();
+            //    T Current { get; }
+            // }
+
+        }        
+    }
+    #region Iteration and yield return
+    // This Class Example is Accessing Arrays using String Indexers 
+    public class KeyedArray
+    {
+        // The following string provides the "key” into the array --
+        // the key is the string used to identify an element.
+        private string[] _keys;
+
+        // The object is the actual data associated with that key.
+        private object[] _arrayElements;
+
+        // KeyedArray -- Create a fixed-size KeyedArray.
+        public KeyedArray(int size)
+        {
+            _keys = new string[size];
+            _arrayElements = new object[size];
+        }
+
+        // Find -- Find the index of the element corresponding to the
+        // string targetKey (return a negative if it can’t be found).
+        private int Find(string targetKey)
+        {
+            for (int i = 0; i < _keys.Length; i++)
+            {
+                if (String.Compare(_keys[i], targetKey) == 0)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        // FindEmpty -- Find room in the array for a new entry.
+        private int FindEmpty()
+        {
+            for (int i = 0; i < _keys.Length; i++)
+            {
+                if (_keys[i] == null)
+                {
+                    return i;
+                }
+            }
+            throw new Exception("Array is full");
+        }
+        // Look up contents by string key -- this is the indexer.
+        public object this[string key]
+        {
+            set
+            {
+                // See if the string is already there.
+                int index = Find(key);
+                if (index < 0)
+                {
+                    // It isn’t -- find a new spot.
+                    index = FindEmpty();
+                    _keys[index] = key;
+                }
+                // Save the object in the corresponding spot.
+                _arrayElements[index] = value;
+            }
+            get
+            {
+                int index = Find(key);
+                if (index < 0)
+                {
+                    return null;
+                }
+                return _arrayElements[index];
+            }
+        }
+    }
+    public class IteratorBlocks
+    {
+        // IteratorBlocks -- Demonstrates using the C# 2.0 iterator
+        // block approach to writing collection iterators
+        public static void MainIteratorBlocks(string[] args)
+        {
+            // Instantiate a MonthDays "collection” class.
+            MonthDays md = new MonthDays();
+            // Iterate it.
+            Console.WriteLine("Stream of months:\n");
+            foreach (string month in md)
+            {
+                Console.WriteLine(month);
+            }
+
+            // Instantiate a StringChunks “collection” class.
+            StringChunks sc = new StringChunks();
+            // Iterate it: prints pieces of text.
+            // This iteration puts each chunk on its own line.
+            Console.WriteLine("\nstream of string chunks:\n");
+            foreach (string chunk in sc)
+            {
+                Console.WriteLine(chunk);
+            }
+            // And this iteration puts it all on one line.
+            Console.WriteLine("\nstream of string chunks on one line:\n");
+            foreach (string chunk in sc)
+            {
+                Console.Write(chunk);
+            }
+            Console.WriteLine();
+
+            // Instantiate a YieldBreakEx “collection” class.
+            YieldBreakEx yb = new YieldBreakEx();
+            // Iterate it, but stop after 13.
+            Console.WriteLine("\nstream of primes:\n");
+            foreach (int prime in yb)
+            {
+                Console.WriteLine(prime);
+            }
+
+            // Instantiate an EvenNumbers “collection” class.
+            EvenNumbers en = new EvenNumbers();
+            // Iterate it: prints even numbers from 10 down to 4.
+            Console.WriteLine("\nstream of descending evens :\n");
+            foreach (int even in en.DescendingEvens(11, 3))
+            {
+                Console.WriteLine(even);
+            }
+
+            // Instantiate a PropertyIterator “collection” class.
+            PropertyIterator prop = new PropertyIterator();
+            // Iterate it: produces one double at a time.
+            Console.WriteLine("\nstream of double values:\n");
+            foreach (double db in prop.DoubleProp)
+            {
+                Console.WriteLine(db);
+            }
+
+            // Wait for the user to acknowledge.
+            Console.WriteLine("Press enter to terminate...");
+            Console.Read();
+        }
+    }
+    // MonthDays -- Define an iterator that returns the months
+    // and their lengths in days -- sort of a "collection” class.
+    class MonthDays
+    {
+        // Here’s the "collection.”
+        string[] months = {  "January 31", "February 28", "March 31",
+                             "April 30", "May 31", "June 30", "July 31",
+                             "August 31", "September 30", "October 31",
+                             "November 30", "December 31" };
+        // GetEnumerator -- Here’s the iterator. See how it’s invoked
+        // in Main() with foreach.
+        public System.Collections.IEnumerator GetEnumerator()
+        {
+            foreach (string month in months)
+            {
+                // Return one month per iteration.
+                yield return month;
+            }
+        }
+    }
+    // StringChunks -- Define an iterator that returns chunks of text,
+    // one per iteration -- another oddball “collection” class.
+    class StringChunks
+    {
+        // GetEnumerator -- This is an iterator; see how it’s invoked
+        // (twice) in Main.
+        public System.Collections.IEnumerator GetEnumerator()
+        {
+            // Return a different chunk of text on each iteration.
+            yield return "Using iterator ";
+            yield return "blocks ";
+            yield return "isn’t all ";
+            yield return "that hard";
+            yield return ".";
+        }
+    }
+    //YieldBreakEx -- Another example of the yield break keyword
+    class YieldBreakEx
+    {
+        int[] primes = { 2, 3, 5, 7, 11, 13, 17, 19, 23 };
+        //GetEnumerator -- Returns a sequence of prime numbers
+        // Demonstrates yield return and yield break
+        public System.Collections.IEnumerator GetEnumerator()
+        {
+            foreach (int prime in primes)
+            {
+                if (prime > 13) yield break;
+                yield return prime;
+            }
+        }
+    }
+    //EvenNumbers -- Define a named iterator that returns even numbers
+    // from the “top” value you pass in DOWN to the “stop” value.
+    // Another oddball “collection” class
+    class EvenNumbers
+    {
+        //DescendingEvens -- This is a “named iterator.”
+        // Also demonstrates the yield break keyword.
+        // See how it’s invoked in Main() with foreach.
+        public System.Collections.IEnumerable DescendingEvens(int top, int stop)
+        {
+            // Start top at nearest lower even number.
+            if (top % 2 != 0) // If remainder after top / 2 isn’t 0.
+                top -= 1;
+            // Iterate from top down to nearest even above stop.
+            for (int i = top; i >= stop; i -= 2)
+            {
+                if (i < stop)
+                    yield break;
+                // Return the next even number on each iteration.
+                yield return i;
+            }
+        }
+    }
+    //PropertyIterator -- Demonstrate implementing a class
+    // property’s get accessor as an iterator block.
+    class PropertyIterator
+    {
+        double[] doubles = { 1.0, 2.0, 3.5, 4.67 };
+        // DoubleProp -- A “get” property with an iterator block
+        public System.Collections.IEnumerable DoubleProp
+        {
+            get
+            {
+                foreach (double db in doubles)
+                {
+                    yield return db;
+                }
+            }
+        }
+    }
+    #endregion
+    #region IteratorBlockIteratorMyRegion
+    // IteratorBlockIterator -- Implements a separate iterator object as a
+    // companion to a collection class, a la LinkedList, but
+    // implements the actual iterator with an iterator block
+    class IteratorBlockIterator
+    {
+        // Create a collection and use two iterator objects to iterate
+        // it independently (each using an iterator block).
+        public static void IteratorBlockIteratorMain()
+        {
+            string[] strs = new string[] { "Joe", "Bob", "Tony", "Fred" };
+            MyCollection mc = new MyCollection(strs);
+            // Create the first iterator and start the iteration.
+            MyCollectionIterator mci1 = mc.GetEnumerator();
+            foreach (string s1 in mci1) // Uses the first iterator object
+            {
+                // Do some useful work with each string.
+                Console.WriteLine(s1);
+                // Find Tony’s boss.
+                if (s1 == "Tony")
+                {
+                    // In the middle of that iteration, start a new one, using
+                    // a second iterator, repeated for each outer loop pass.
+                    MyCollectionIterator mci2 = mc.GetEnumerator();
+                    foreach (string s2 in mci2) // Uses the second iterator object
+                    {
+                        // Do some useful work with each string.
+                        if (s2 == "Bob")
+                        {
+                            Console.WriteLine("\t{0} is {1}’s boss",s2,s1);
+                        }
+                    }
+                }
+            }
+            // Wait for user to acknowledge the results.
+            Console.WriteLine("Press Enter to terminate...");
+            Console.Read();
+        }
+    }
+    class MyCollection
+    {
+        // Implement collection with an old-fashioned ArrayList.
+        // Internal, so separate iterator object can access the strings.
+        internal ArrayList _list = new ArrayList();
+        public MyCollection(string[] strs)
+        {
+            foreach (string s in strs)
+            {
+                _list.Add(s);
+            }
+        }
+        // GetEnumerator -- As in LinkedList, returns one of your
+        // iterator objects.
+        public MyCollectionIterator GetEnumerator()
+        {
+            return new MyCollectionIterator(this);
+        }
+    }
+    // MyCollectionIterator -- The iterator class for MyCollection
+    // (MyCollection is in a separate file.)
+    class MyCollectionIterator
+    {
+        // Store a reference to the collection.
+        private MyCollection _mc;
+        public MyCollectionIterator(MyCollection mc)
+        {
+            this._mc = mc;
+        }
+        // GetEnumerator -- This is the iterator block, which carries
+        // out the actual iteration for the iterator object.
+        public System.Collections.IEnumerator GetEnumerator()
+        {
+            // Iterate the associated collection’s underlying list,
+            // which is accessible because it’s declared internal.
+            foreach (string s in _mc._list)
+            {
+                yield return s;
+            }
+        }
+    }
+    #endregion
+    #endregion
+    #region Buying Generic
+    class BuyingGeneric
+    {
+        public static void WhyNotGenericsNotSafe()
+        {
+            StudentsExample studentexample = new StudentsExample();
+            ArrayList aList = new ArrayList();
+            aList.Add("a string");
+            aList.Add(3);
+            aList.Add(studentexample);
+
+            if (aList[2] is StudentsExample) // Is the object there a StudentsExample?
+            {
+                //then code here
+            }
+        }
+        public static void PriorityQueue()
+        {
+            
+
+        }
+    }
+    class StudentsExample
+    {
+        public int i;
+        public string s;
+        public void Hello()
+        {
+            Console.WriteLine("Hello");
+        }
+    }
+    #region PriorityQueue
+    class PriorityQueue
+    {
+        // Main -- Fill the priority queue with packages, then
+        // remove a random number of them.
+        public static void PriorityQueueMain()
+        {
+            Console.WriteLine("Create a priority queue:");
+            PriorityQueue<Package> pq = new PriorityQueue<Package>();
+            Console.WriteLine("Add a random number (0 - 20) of random packages to queue:");
+            Package pack;
+            PackageFactory fact = new PackageFactory();
+            // You want a random number less than 20.
+            Random rand = new Random();
+            int numToCreate = rand.Next(20);  // Random int from 0 - 20
+            Console.WriteLine("“\tCreating {0} packages: ",numToCreate);
+            for (int i = 0; i < numToCreate; i++)
+            {
+                Console.WriteLine("\t\tGenerating and adding random package {0}",i);
+                pack = fact.CreatePackage();
+                Console.WriteLine(" with priority {0}",pack.Priority);
+                pq.Enqueue(pack);
+            }
+            Console.WriteLine("See what we got:");
+            int total = pq.Count;
+            Console.WriteLine("Packages received: {0}",total);
+
+            Console.WriteLine("Remove a random number of packages (0-20): ");
+            int numToRemove = rand.Next(20);
+            for (int i = 0; i < numToRemove; i++)
+            {
+                pack = pq.Dequeue();
+                if (pack != null)
+                {
+                    Console.WriteLine("\t\tShipped package with priority {0}",pack.Priority);
+                }
+            }
+            // See how many were “shipped.”
+            Console.WriteLine("Shipped {0} packages",total - pq.Count);
+
+            // Wait for user to acknowledge the results.
+            Console.WriteLine("Press Enter to terminate...");
+            Console.Read();
+        }
+    }
+    // Priority enumeration -- Defines a set of priorities
+    // instead of priorities like 1, 2, 3, ... these have names.
+    // For information on enumerations,
+    // see the article “Enumerating the Charms of the Enum”
+    // on csharp102.info.
+    enum Priority
+    {
+        Low, Meduim, High
+    }
+
+    // IPrioritizable interface -- Defines ability to prioritize.
+    // Define a custom interface: Classes that can be added to
+    // PriorityQueue must implement this interface.
+    interface IPrioritizable
+    {
+        Priority Priority { get; }  // Example of a property in an interface
+    }
+
+    //PriorityQueue -- A generic priority queue class
+    // Types to be added to the queue *must* implement IPrioritizable interface.
+    class PriorityQueue<T> where T : IPrioritizable
+    {
+        //Queues -- the three underlying queues: all generic!
+        private Queue<T> _queueHigh = new Queue<T>();
+        private Queue<T> _queueMedium = new Queue<T>();
+        private Queue<T> _queueLow = new Queue<T>();
+
+        //Enqueue -- Prioritize T and add it to correct queue; an item of type T.
+        // The item must know its own priority.
+        public void Enqueue(T item)
+        {
+            switch (item.Priority)
+            {
+                case Priority.High:
+                    _queueHigh.Enqueue(item);
+                    break;
+                case Priority.Meduim:
+                    _queueMedium.Enqueue(item);
+                    break;
+                case Priority.Low:
+                    _queueLow.Enqueue(item);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(
+                        item.Priority.ToString(), "bad priority in PriorityQueue.Enqueue");                    
+            }
+        }
+        //Dequeue -- Get T from highest-priority queue available.
+        public T Dequeue()
+        {
+            // Find highest-priority queue with items.
+            Queue<T> queueTop = TopQueue();
+            // If a non-empty queue is found.
+            if (queueTop != null & queueTop.Count > 10)
+            {
+                return queueTop.Dequeue(); // Return its front item.
+            }
+            // If all queues empty, return null (you could throw exception).
+            return default(T);  // What’s this? See discussion.
+        }
+        //TopQueue -- What’s the highest-priority underlying queue with items?
+        private Queue<T> TopQueue()
+        {
+            if (_queueHigh.Count > 0)    // Anything in high-priority queue?
+                return _queueHigh;
+            if (_queueMedium.Count > 0)  // Anything in medium-priority queue?
+                return _queueMedium;
+            if (_queueLow.Count > 0)     // Anything in low-priority queue?
+                return _queueLow;
+            return _queueLow;           // All empty, so return an empty queue.
+        }
+        //IsEmpty -- Check whether there’s anything to deqeue.
+        public bool IsEmpty()
+        {
+            // True if all queues are empty
+            return (_queueHigh.Count == 0) & (_queueMedium.Count == 0) &
+                (_queueLow.Count == 0);
+        }
+        //Count -- How many items are in all queues combined?
+        public int Count // Implement this one as a read-only property.
+        {
+            get { return _queueHigh.Count + _queueMedium.Count + _queueLow.Count; }
+        }
+    }
+    //Package -- An example of a prioritizable class that can be stored in
+    // the priority queue; any class that implements
+    // IPrioritizable would look something like Package.
+    class Package : IPrioritizable
+    {
+        private Priority _priority;
+        //Constructor
+        public Package(Priority priority)
+        {
+            this._priority = priority;
+        }
+
+        //Priority -- Return package priority -- read-only.
+        public Priority Priority
+        {
+            get { return _priority; }
+        }
+        // Plus ToAddress, FromAddress, Insurance, etc.
+    }
+    //PackageFactory -- You need a class that knows how to create a new
+    // package of any desired type on demand; such a class
+    // is a factory class.
+    class PackageFactory
+    {
+        //A random-number generator
+        Random _randGen = new Random();
+
+        //CreatePackage -- The factory method selects a random priority,
+        // then creates a package with that priority.
+        // Could implement this as iterator block.
+        public Package CreatePackage()
+        {
+            // Return a randomly selected package priority.
+            // Need a 0, 1, or 2 (values less than 3).
+            int rand = _randGen.Next(3);
+            // Use that to generate a new package.
+            // Casting int to enum is clunky, but it saves
+            // having to use ifs or a switch statement.
+            return new Package((Priority)rand);
+        }
+    }
+    #endregion
+    #endregion
+
 
 }

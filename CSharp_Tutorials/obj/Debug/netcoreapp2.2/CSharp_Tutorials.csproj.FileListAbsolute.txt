@@ -8,3 +8,4 @@ D:\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_
 D:\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.AssemblyInfo.cs
 D:\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.dll
 D:\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.pdb
+D:\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.csprojAssemblyReference.cache

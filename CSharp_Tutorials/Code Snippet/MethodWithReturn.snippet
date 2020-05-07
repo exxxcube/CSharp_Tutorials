@@ -11,8 +11,8 @@
       <Code Language="CSharp">
         <![CDATA[$Access$ $DataType$ $MethodName$()
                 {
-                    return null;
-                }]]>
+                    return $DefaultReturnValue$;
+                }$end$]]>
       </Code>
       <Declarations>
         <Literal>
@@ -29,7 +29,12 @@
           <ID>MethodName</ID>
           <ToolTip>Input a Method Name</ToolTip>
           <Default>Name</Default>
-        </Literal>        
+        </Literal>
+        <Literal>
+          <ID>DefaultReturnValue</ID>
+          <ToolTip>Input Return Value</ToolTip>
+          <Default>0</Default>
+        </Literal>
       </Declarations>
     </Snippet>
   </CodeSnippet>

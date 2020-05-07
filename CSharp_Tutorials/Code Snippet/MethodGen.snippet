@@ -9,13 +9,18 @@
         </Header>
         <Snippet>
             <Code Language="CSharp">
-                <![CDATA[
-                public static $DataType$ $MethodName$()
+                <![CDATA[$Access$ static $DataType$ $MethodName$()
                 {
 
-                }]]>
+
+                }$end$]]>
             </Code>
           <Declarations>
+            <Literal>
+              <ID>Access</ID>
+              <ToolTip>Input Access type</ToolTip>
+              <Default>private</Default>
+            </Literal>
             <Literal>
               <ID>DataType</ID>              
               <ToolTip>Input a Method DataType</ToolTip>                            

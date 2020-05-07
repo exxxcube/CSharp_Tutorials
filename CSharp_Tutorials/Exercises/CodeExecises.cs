@@ -176,7 +176,18 @@ namespace CSharp_Tutorials.Exercises
             double i; double.TryParse(s,out i);
             Console.WriteLine("Kelvin = {0}",CelsiusToKelvin(i));
             Console.WriteLine("Fahrenheit = {0}",CelsiusToFahrenheit(i));            
-        }        
+        }
+        public static string LetterRemover(char c)
+        {
+            //Write a C# program remove specified a character from
+            //a non-empty string using index of a character.
+            string stringExample = "w3resource";
+            StringBuilder s = new StringBuilder(stringExample);
+            int indexOfString = stringExample.IndexOf(c);
+            s.Remove(indexOfString, 1);
+            return s.ToString();
+        }
+        
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
         {
