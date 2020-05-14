@@ -12,7 +12,7 @@ namespace MyNameSpace
             //string[] s = new string[1];
             //s[0] = "D:\\Teaching Purposes\\dmc\\Other Projects 2019-2020\\Graduation Design";
             //MoreCollectionExample.IteratingThroughADirectoryOfFiles(s);
-            PriorityQueue.PriorityQueueMain();
+            ExceptionsTopic.CreatingExceptions();
             //Console.WriteLine(CodeExecises.LetterRemover('w'));
             #region For KeyedArray Example
             //// Create an array with enough room.

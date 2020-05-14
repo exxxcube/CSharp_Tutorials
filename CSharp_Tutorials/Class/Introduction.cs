@@ -1876,11 +1876,7 @@ namespace CSharp_Tutorials.Class
                 //then code here
             }
         }
-        public static void PriorityQueue()
-        {
-            
-
-        }
+      
     }
     class StudentsExample
     {
@@ -2062,6 +2058,40 @@ namespace CSharp_Tutorials.Class
         }
     }
     #endregion
+    #endregion
+    #region Some Exceptional Exceptions
+    class ExceptionsTopic
+    {
+        public static void ErrorReportingMechanism()
+        {
+            // Using an Exceptional Error-Reporting Mechanism
+            // This mechanism is based on the keywords try,
+            // catch, throw, and finally.
+            try
+            {
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                
+            }            
+        }
+        public static void CreatingExceptions()
+        {
+            try
+            {
+                int i = Convert.ToInt32(Console.ReadLine());                
+            }
+            catch 
+            {
+                throw new ArgumentException("This is an Exception");
+            }
+        }
+    }
     #endregion
 
 

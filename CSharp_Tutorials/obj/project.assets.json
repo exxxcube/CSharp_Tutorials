@@ -686,8 +686,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\63938\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\infoj\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -695,15 +695,16 @@
       "projectUniqueName": "D:\\Projects\\C#\\CSharp_Tutorials\\CSharp_Tutorials\\CSharp_Tutorials.csproj",
       "projectName": "CSharp_Tutorials",
       "projectPath": "D:\\Projects\\C#\\CSharp_Tutorials\\CSharp_Tutorials\\CSharp_Tutorials.csproj",
-      "packagesPath": "C:\\Users\\63938\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\infoj\\.nuget\\packages\\",
       "outputPath": "D:\\Projects\\C#\\CSharp_Tutorials\\CSharp_Tutorials\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\63938\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\infoj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
@@ -734,10 +735,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
