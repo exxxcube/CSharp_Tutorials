@@ -6,7 +6,7 @@ using System.IO;
 namespace CSharp_Tutorials.Class
 {
     #region Data Types Example
-    class Introduction
+    class CSharp_Tutorials
     {               
         public void Intro()
         {
