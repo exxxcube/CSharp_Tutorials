@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CSharp_Tutorials.Exercises
 {
-    class CodeExecises
+    public class CodeExecises
     {
         public static void Hello()
         {
@@ -187,7 +187,23 @@ namespace CSharp_Tutorials.Exercises
             s.Remove(indexOfString, 1);
             return s.ToString();
         }
-        
+        public static string NewString(string s)
+        {
+            //16. Write a C# program to create a new 
+            //string from a given string where the first and last
+            //characters will change their positions.
+            char temp = s[s.Length-1];
+            char firstChar = s[0];            
+            return temp + s.Substring(1, s.Length - 2) + firstChar;
+        }
+        public static string OneCharacterFromFirstToLast(string s)
+        {
+            //Write a C# program to create a new string from a given string (length 1 or more )
+            //with the first character added at the front and back.
+            char temp = s[0];
+            return temp + s + temp;
+        }
+
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
         {
