@@ -1,5 +1,6 @@
 ﻿using CSharp_Tutorials.Class;
 using CSharp_Tutorials.Exercises;
+using CSharp_Tutorials.Object_Oriented_Programming;
 using System;
 
 namespace MyNameSpace
@@ -9,11 +10,14 @@ namespace MyNameSpace
         //This is where your program starts.
         static void Main(string[] args)
         {
+            #region For Introduction Class Example
             //string[] s = new string[1];
             //s[0] = "D:\\Teaching Purposes\\dmc\\Other Projects 2019-2020\\Graduation Design";
             //MoreCollectionExample.IteratingThroughADirectoryOfFiles(s);
-            Console.WriteLine(CodeExecises.OneCharacterFromFirstToLast("w3resource"));
+            //Console.WriteLine(CodeExecises.OneCharacterFromFirstToLast("w3resource"));
             //Console.WriteLine(CodeExecises.LetterRemover('w'));
+            #endregion
+
             #region For KeyedArray Example
             //// Create an array with enough room.
             //KeyedArray ma = new KeyedArray(100);
@@ -31,6 +35,10 @@ namespace MyNameSpace
             //// Wait for user to acknowledge the results.
             //Console.WriteLine("Press Enter to terminate...");
             //Console.Read();
+            #endregion
+
+            #region For Object Oriented Programming
+            ClassProperties.ClassPropertiesExamples();
             #endregion
         }
     }
