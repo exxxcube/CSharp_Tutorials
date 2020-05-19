@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Xml.Serialization;
+using System.ComponentModel;
 
 namespace CSharp_Tutorials.Exercises
 {
@@ -202,6 +204,54 @@ namespace CSharp_Tutorials.Exercises
             //with the first character added at the front and back.
             char temp = s[0];
             return temp + s + temp;
+        }
+        public static bool NegativeAndPositive(int x, int y)
+        {
+            // 18.Write a C# program to check two given integers and
+            // return true if one is negative and one is positive
+            if ((x > 0 && y < 0) || (x < 0 && y > 0))
+                return true;
+
+            return false;
+        }
+        public static int TripleSum(int x, int y)
+        {
+            // 19.Write a C# program to compute the sum of two given integers,
+            // if two values are equal then return the triple of their sum.
+            int temp;
+            if (x == y)
+                temp = (x + y) * 3;
+            else
+                temp = x + y;
+
+            return temp;
+        }
+        public static int GreaterThanSecondNumber(int x, int y)
+        {
+            // 20. Write a C# program to get the absolute value of the difference
+            // between two given numbers. Return double the absolute value of the
+            // difference if the first number is greater than second number.
+            int temp;
+            if (x > y)
+            {
+                temp = (x - y) * 2;
+                if(temp < 0)
+                    return temp * -1;
+                return temp;
+            }
+            else
+                return (x - y) * -1;            
+        }
+        public static bool IfTwenty(int x, int y)
+        {
+            // 21. Write a C# program to check the sum of the two given integers and
+            // return true if one of the integer is 20 or if their sum is 20.
+            if (x == 20 || y == 20)
+                return true;
+            if ((x + y) == 20)
+                return true;
+
+            return false;
         }
 
         #region UsefulMethods

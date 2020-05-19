@@ -10,12 +10,17 @@ namespace MyNameSpace
         //This is where your program starts.
         static void Main(string[] args)
         {
+            string s = Console.ReadLine();
+            int.TryParse(s, out int x);
+            string t = Console.ReadLine();
+            int.TryParse(t, out int y);
+            Console.WriteLine(CodeExecises.IfTwenty(x,y));
+
             #region For Introduction Class Example
             //string[] s = new string[1];
             //s[0] = "D:\\Teaching Purposes\\dmc\\Other Projects 2019-2020\\Graduation Design";
             //MoreCollectionExample.IteratingThroughADirectoryOfFiles(s);
-            //Console.WriteLine(CodeExecises.OneCharacterFromFirstToLast("w3resource"));
-            //Console.WriteLine(CodeExecises.LetterRemover('w'));
+
             #endregion
 
             #region For KeyedArray Example
@@ -37,9 +42,9 @@ namespace MyNameSpace
             //Console.Read();
             #endregion
 
-            #region For Object Oriented Programming
-            ClassProperties.ClassPropertiesExamples();
-            #endregion
+            //#region For Object Oriented Programming
+            //ClassProperties.ClassPropertiesExamples();
+            //#endregion
         }
     }
 }
