@@ -1,6 +1,7 @@
 ﻿using CSharp_Tutorials.Class;
 using CSharp_Tutorials.Exercises;
 using CSharp_Tutorials.Object_Oriented_Programming;
+using CSharp_Tutorials.Object_Oriented_Programming.We_Have_Our_Methods;
 using System;
 
 namespace MyNameSpace
@@ -10,11 +11,11 @@ namespace MyNameSpace
         //This is where your program starts.
         static void Main(string[] args)
         {
-            string s = Console.ReadLine();
-            int.TryParse(s, out int x);
-            string t = Console.ReadLine();
-            int.TryParse(t, out int y);
-            Console.WriteLine(CodeExecises.IfTwenty(x,y));
+            //string s = Console.ReadLine();
+            //int.TryParse(s, out int x);
+            //string t = Console.ReadLine();
+            //int.TryParse(t, out int y);
+            //Console.WriteLine(CodeExecises.IfTwenty(x,y));
 
             #region For Introduction Class Example
             //string[] s = new string[1];
@@ -42,9 +43,14 @@ namespace MyNameSpace
             //Console.Read();
             #endregion
 
-            //#region For Object Oriented Programming
-            //ClassProperties.ClassPropertiesExamples();
-            //#endregion
+            #region For Object Oriented Programming
+            //Methods example = new Methods();
+            //example.InstanceMethod();       // Invoke the instance method
+            //                                // with that instance.
+            //Methods.ClassMethod();          // Invoke the class method with the class.
+            //                                // If the method is static
+            CalculateInterestTableWithMethods.CalculateInterestTableWithMethodsMain();
+            #endregion
         }
     }
 }
