@@ -49,7 +49,10 @@ namespace MyNameSpace
             //                                // with that instance.
             //Methods.ClassMethod();          // Invoke the class method with the class.
             //                                // If the method is static
-            CalculateInterestTableWithMethods.CalculateInterestTableWithMethodsMain();
+            //CalculateInterestTableWithMethods.CalculateInterestTableWithMethodsMain();
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            Methods.DisplayRation(x,y);
             #endregion
         }
     }

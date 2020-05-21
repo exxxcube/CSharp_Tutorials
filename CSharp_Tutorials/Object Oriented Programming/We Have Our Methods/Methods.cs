@@ -21,6 +21,104 @@ namespace CSharp_Tutorials.Object_Oriented_Programming.We_Have_Our_Methods
             Console.WriteLine("this is a Class method");
         }
         #endregion
+        #region Passing an argument to a method
+        public static void Output(string someString)
+        {
+            Console.WriteLine("Output() was passed the argument: "+someString);
+        }
+        #endregion
+        #region Passing multiple arguments to methods
+        public static void AverageAndDisplayMain()
+        {
+            // Access the member method.
+            AverageAndDisplayMethod("grade 1",3.5,"grade 2",4.0);
+            Console.WriteLine();
+            // Access the second version of the method.
+            AverageAndDisplayMethod(3.5,4.0);
+            // Wait for user to acknowledge.
+            Console.WriteLine("Press Enter to terminate...");
+            Console.Read();
+        }
+        public static void MethodsWithDefaultArgumentsMain()
+        {
+            // Access the member method.
+            Console.WriteLine(DisplayRoundedDecimal(12.345678M,3));
+            // Wait for user to acknowledge.
+            Console.WriteLine("Press Enter to terminate ...");
+            Console.Read();
+        }
+        // int numberOfSignificantDigits = 2 is an example of default value in the parameter
+        private static string DisplayRoundedDecimal(decimal value, int numberOfSignificantDigits = 2)
+        {
+            
+            // First round off the number to the specified number
+            // of significant digits.
+            decimal roundedValue = decimal.Round(value, numberOfSignificantDigits);
+            // Convert that to a string.
+            string s = roundedValue.ToString();
+            return s;
+        }
+        //private static string DisplayRoundedDecimal(decimal value) 
+        //{
+        //    // Invoke DisplayRoundedDecimal(decimal, int) specifying
+        //    // the default number of digits.
+        //    string s = DisplayRoundedDecimal(value, 2);
+        //    return s;
+        //}
+        // AverageAndDisplayMethod -- Average two numbers with their
+        // labels and display the results.
+        private static void AverageAndDisplayMethod(string s1, double d1, string s2, double d2) 
+        {
+            double average = (d1 + d2) / 2;
+            Console.WriteLine("The average of " + s1 + 
+                              " whose value is " + d1
+                               + " and "        + s2
+                               +" whose value "
+                               +"is "           + d2
+                               + " is "         + average);
+        }
+        //This is a AverageAndDisplayMethod Overloading method
+        private static void AverageAndDisplayMethod(double d1, double d2)
+        {
+            double average = (d1 + d2) / 2;
+            Console.WriteLine("The average of "+ d1
+                + " and "                      + d2
+                + " is "                       + average);
+        }
+        #endregion
+        #region Returning Values
+        public static void DisplayRation(double numerator, double denominator)
+        {
+            // If the denominator is zero . . .
+            if (denominator == 0.0)
+            {
+                // . . .output an error message and . . .
+                Console.WriteLine("The denominator of a ratio cannot be 0");
+                // . . .return to the caller.
+                return;
+            }
+            // This code is executed only if denominator is nonzero.
+            double ratio = numerator / denominator;
+            Console.WriteLine("The ratio of " + numerator
+                               + " over " + denominator
+                               + " is "+ ratio);
+        }// If the denominator isn’t zero, the method exits here.
+        private static double Average(double d1, double d2)
+        {
+            double average = (d1 + d2) / 2;
+            // You need a return statement to return a value
+            return average;
+        }
+        public static void AverageMain()
+        {
+            double v1 = 1.0;
+            double v2 = 3.0;
+            double averageValue = Average(v1,v2);
+            Console.WriteLine("The average of " + v1 + " and "+ v2 + " is " + averageValue);           
+            //This also works
+            Console.WriteLine("The average of " + v1 + " and " + v2 + " is " + Average(v1,v2));
+        }
+        #endregion
     }
     class CalculateInterestTableWithMethods
     {
