@@ -253,6 +253,47 @@ namespace CSharp_Tutorials.Exercises
 
             return false;
         }
+        public static bool WithinTwentyOfOneHunderd(int n)
+        {
+            //22. Write a C# program to check if an given integer is within 20 of 100 or 200.
+            int checkIn100 = n - 100;
+            int checkIn200 = n - 200;
+
+            if ((checkIn100 * -1) <= 20 || (checkIn200 * -1) <= 20)          
+                return true;
+            return false;
+        }
+        public static string LowerCase(string s)
+        {
+            //23. Write a C# program to convert a given string into lowercase.
+            return s.ToLower();
+        }
+        public static string LongestWord(string s)
+        {
+            //24. Write a C# program to find the longest word in a string.
+            char[] arrayOfSeparators = { '\t', ' ', '\n' };
+            string[] arr = s.Split(arrayOfSeparators);
+            int startingPoint = 0;
+            int temp = 0;
+            foreach (string item in arr)
+            {
+                if (item.Length > startingPoint)
+                {
+                    temp = Array.IndexOf(arr,item);
+                    startingPoint = item.Length;
+                }
+            }
+            //int i = 0;
+            //for (int inner = 0; inner < arr.Length; inner++)
+            //{
+            //    for (int outter = 0; outter < arr.Length; outter++)
+            //    {
+            //        if (arr[inner].Count() > arr[outter].Count())
+            //            i = inner;
+            //    }
+            //}            
+            return arr[temp];
+        }
 
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
