@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using System.Xml.Serialization;
 using System.ComponentModel;
+using CSharp_Tutorials.Class;
+using System.Diagnostics;
 
 namespace CSharp_Tutorials.Exercises
 {
@@ -293,6 +294,68 @@ namespace CSharp_Tutorials.Exercises
             //    }
             //}            
             return arr[temp];
+        }
+        public static void OddNumbers(int n)
+        {
+            //25. Write a C# program to print the odd numbers from 1 to 99.
+            //Prints one number per line.
+            for (int i = 1; i <= n; i++)
+            {
+                if((i % 2) == 1)
+                    Console.WriteLine(i);
+            }
+        }
+        public static void First500PrimeNumbers()
+        {
+            //26.Write a C# program to compute the sum of the first 500 prime numbers.
+            long temp = 0;
+            int starting = 2;
+            int ctrl = 0;
+            while (ctrl < 500)
+            {
+                if (isPrime(starting))
+                {
+                    temp += starting;
+                    ctrl++;
+                }
+                starting++;
+            }
+            Console.WriteLine(temp);
+        }
+        private static bool isPrime(int n)
+        {
+            int x = (int)Math.Floor(Math.Sqrt(n));
+            if (n == 1) return false;
+            if (n == 2) return true;
+
+            for (int i = 2; i <= x; i++)
+            {
+                if ((n % i) == 0) return false;
+            }
+            return true;
+        }
+        public static int DigitsOfAnInteger(int n)
+        {
+            //27. Write a C# program and compute the sum of the digits of an integer.
+            string s = n.ToString();
+            int temp = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                temp += Convert.ToInt32(s[i].ToString());
+            }
+            return temp;
+        }
+        public static void ReverseAString(string s)
+        {
+            //28. Write a C# program to reverse the words of a sentence.            
+            char[] arr = { '\t', ' ', '\n' };
+            string[] temp = s.Split(arr);
+            Array.Reverse(temp);
+            foreach (var item in temp)
+            {
+                Console.Write(item+ " ");
+            }
+            Console.WriteLine();
         }
 
         #region UsefulMethods

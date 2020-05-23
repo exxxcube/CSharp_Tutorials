@@ -14,8 +14,8 @@ namespace MyNameSpace
             //string s = Console.ReadLine();
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
-            //int.TryParse(t, out int y);
-            Console.WriteLine(CodeExecises.LongestWord("LFKHKFJHDF asd LFKHKFJHDFG akfhakdjahkajhfjah"));
+            //int.TryParse(t, out int y);            
+            CodeExecises.ReverseAString("Display the pattern like pyramid using the alphabet.");
 
             #region For Introduction Class Example
             //string[] s = new string[1];
