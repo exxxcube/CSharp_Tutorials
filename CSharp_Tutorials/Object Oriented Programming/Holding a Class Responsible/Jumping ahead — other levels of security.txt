@@ -1,0 +1,23 @@
+﻿C# provides these levels of security:
+ ✦ A public member is accessible to any class in the program.
+ ✦ A private member is accessible only from the current class.
+ ✦ A protected member is accessible from the current class and any of its
+subclasses.
+ ✦ An internal member is accessible from any class within the same program module or assembly.
+A C# “module,” or assembly, is a separately compiled piece of code,
+either an executable program in an .EXE file or a supporting library
+module in a .DLL file. A single namespace can extend across multiple
+assemblies. (Chapter 10 in this minibook explains C# assemblies and
+namespaces and discusses access levels other than public and
+private.)
+ ✦ An internal protected member is accessible from the current class
+and any subclass, and from classes within the same module.
+
+Keeping a member hidden by declaring it private offers the maximum
+amount of security. However, in many cases, you don’t need that level of
+security. After all, the members of a subclass already depend on the members of the base class,
+so protected offers a comfortable level of security.
+
+Use private, if possible,
+and then escalate to protected, internal, internal protected, or
+public as necessary.

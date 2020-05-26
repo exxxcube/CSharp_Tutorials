@@ -1,6 +1,7 @@
 ﻿using CSharp_Tutorials.Class;
 using CSharp_Tutorials.Exercises;
 using CSharp_Tutorials.Object_Oriented_Programming;
+using CSharp_Tutorials.Object_Oriented_Programming.Holding_a_Class_Responsible;
 using CSharp_Tutorials.Object_Oriented_Programming.Let_Me_Say_About_this;
 using CSharp_Tutorials.Object_Oriented_Programming.We_Have_Our_Methods;
 using System;
@@ -54,7 +55,7 @@ namespace MyNameSpace
             //double x = Convert.ToDouble(Console.ReadLine());
             //double y = Convert.ToDouble(Console.ReadLine());
             //Methods.DisplayRation(x,y);
-            MixingStaticAndInstanceMethods.MixingStaticAndInstanceMethodsMain();
+            DecimalBankAccount.DecimalBankAccountProg();
             #endregion
         }
     }
