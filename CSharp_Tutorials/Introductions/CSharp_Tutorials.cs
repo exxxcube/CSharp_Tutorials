@@ -184,8 +184,7 @@ namespace CSharp_Tutorials.Class
             // ✦ Finding characters or substrings inside a string
             //✦ Handling input from the command line
             //✦ Managing formatted output
-            //✦ Working efficiently with strings using the StringBuilder
-   
+            //✦ Working efficiently with strings using the StringBuilder   
 }
     class Student // this class is for String Example
     {

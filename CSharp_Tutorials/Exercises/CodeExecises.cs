@@ -5,6 +5,8 @@ using System.Linq;
 using System.ComponentModel;
 using CSharp_Tutorials.Class;
 using System.Diagnostics;
+using System.IO;
+using System.Net.Http.Headers;
 
 namespace CSharp_Tutorials.Exercises
 {
@@ -322,7 +324,7 @@ namespace CSharp_Tutorials.Exercises
             }
             Console.WriteLine(temp);
         }
-        private static bool isPrime(int n)
+        public static bool isPrime(int n)
         {
             int x = (int)Math.Floor(Math.Sqrt(n));
             if (n == 1) return false;
@@ -357,7 +359,69 @@ namespace CSharp_Tutorials.Exercises
             }
             Console.WriteLine();
         }
+        public static long SpecifiedFile(string s)
+        {
+            //29. Write a C# program to find the size of a specified file in bytes.
+            FileInfo f = new FileInfo(s);                        
+            return f.Length;
+        }
+        public static int HexToDec(string s)
+        {
+            //30. Write a C# program to convert a hexadecimal number to decimal number.
+            #region Manual Computation
+            //char[] arr = s.ToArray();
+            //int max = s.Length;
+            //int temp = 0;
+            //int x = 0;
+            //for (int i = 0; i < s.Length; i++)
+            //{
+            //    switch (arr[i])
+            //    {
+            //        case 'A':
+            //            x = 10;
+            //            break;
+            //        case 'B':
+            //            x = 11;
+            //            break;
+            //        case 'C':
+            //            x = 12;
+            //            break;
+            //        case 'D':
+            //            x = 13;
+            //            break;
+            //        case 'E':
+            //            x = 14;
+            //            break;
+            //        case 'F':
+            //            x = 15;
+            //            break;
+            //        default:
+            //            x = Convert.ToInt32(arr[i].ToString());
+            //            break;
+            //    }
+            //    temp += (x * (int)Math.Pow(16, max - 1));
+            //    max--;
+            //}
+            #endregion
+            #region Simplied Computation
+            int temp = int.Parse(s, System.Globalization.NumberStyles.HexNumber);
+            #endregion
 
+            return temp;
+        }
+        public static int[] MultiplyElements(int[] x, int[] y)
+        {
+            //31. Write a C# program to multiply corresponding elements of two arrays of integers.
+            int max = x.Length;
+            if (x.Length < y.Length) // Check who has the greater length
+                max = y.Length;
+            int[] temp = new int[max];
+            for (int i = 0; i < max; i++)
+            {
+                temp[i] = x[i] * y[i];
+            }
+            return temp;
+        }
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
         {
