@@ -4,8 +4,10 @@ using CSharp_Tutorials.Object_Oriented_Programming;
 using CSharp_Tutorials.Object_Oriented_Programming.Holding_a_Class_Responsible;
 using CSharp_Tutorials.Object_Oriented_Programming.Let_Me_Say_About_this;
 using CSharp_Tutorials.Object_Oriented_Programming.We_Have_Our_Methods;
+using InheritanceExample;
 using System;
 using System.Runtime.InteropServices;
+using SimpleSavingsAccount;
 
 namespace MyNameSpace
 {
@@ -18,12 +20,12 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                              
-            int[] temp = CodeExecises.MultiplyElements(new int[] { 1, 2, 3, 4, 5 },
-                                      new int[] { 1, 2, 3, 4, 5 });
-            foreach (var item in temp)
-            {
-                Console.Write("{0} ",item);
-            }
+            //int[] temp = CodeExecises.MultiplyElements(new int[] { 1, 2, 3, 4, 5 },
+            //                          new int[] { 1, 2, 3, 4, 5 });
+            //foreach (var item in temp)
+            //{
+            //    Console.Write("{0} ",item);
+            //}
             #region For Introduction Class Example
             //string[] s = new string[1];
             //s[0] = "D:\\Teaching Purposes\\dmc\\Other Projects 2019-2020\\Graduation Design";
@@ -60,8 +62,8 @@ namespace MyNameSpace
             //double x = Convert.ToDouble(Console.ReadLine());
             //double y = Convert.ToDouble(Console.ReadLine());
             //Methods.DisplayRation(x,y);
-            //DemonstrateCustomConstructor.DemonstrateCustomConstructorProg();
+            SimpleSavingsAccountClass.SimpleSavingsAccountClassMain();
             #endregion
-        }
+        } 
     }
 }
