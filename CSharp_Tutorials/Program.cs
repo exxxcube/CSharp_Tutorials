@@ -20,12 +20,7 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                              
-            //int[] temp = CodeExecises.MultiplyElements(new int[] { 1, 2, 3, 4, 5 },
-            //                          new int[] { 1, 2, 3, 4, 5 });
-            //foreach (var item in temp)
-            //{
-            //    Console.Write("{0} ",item);
-            //}
+            Console.WriteLine(CodeExecises.SpecifiedWord("Hello how are you?", "Hi"));
             #region For Introduction Class Example
             //string[] s = new string[1];
             //s[0] = "D:\\Teaching Purposes\\dmc\\Other Projects 2019-2020\\Graduation Design";
@@ -62,7 +57,7 @@ namespace MyNameSpace
             //double x = Convert.ToDouble(Console.ReadLine());
             //double y = Convert.ToDouble(Console.ReadLine());
             //Methods.DisplayRation(x,y);
-            SimpleSavingsAccountClass.SimpleSavingsAccountClassMain();
+            //SimpleSavingsAccountClass.SimpleSavingsAccountClassMain();
             #endregion
         } 
     }

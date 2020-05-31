@@ -7,6 +7,8 @@ using CSharp_Tutorials.Class;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Http.Headers;
+using System.Security;
+using System.Net.Mail;
 
 namespace CSharp_Tutorials.Exercises
 {
@@ -421,6 +423,32 @@ namespace CSharp_Tutorials.Exercises
                 temp[i] = x[i] * y[i];
             }
             return temp;
+        }
+        public static string FourCopiesString(string s)
+        {
+            // 32. Write a C# program to create a new string of four copies,
+            // taking last four characters from a given string.
+            // If the length of the given string is less than 4 return the original one.
+            if (s.Length < 4)
+                return s;
+            string temp = s.Substring(s.Length - 4, 4);
+            return String.Format(temp + temp + temp + temp);
+        }
+        public static bool MultipleOfTheeOrSeven(int i)
+        {
+            // 33.Write a C# program to check if a given positive number
+            // is a multiple of 3 or a multiple of 7.
+            if ((i % 3) == 0 || (i % 7) == 0)
+                return true;
+            return false;   
+        }
+        public static bool SpecifiedWord(string sentence,string firstword)
+        {
+            // 34. Write a C# program to check if a string starts with a specified word.
+            string temp = sentence.Substring(0, firstword.Length);
+            if (temp == firstword)
+                return true;
+            return false;
         }
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
