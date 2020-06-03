@@ -1,6 +1,6 @@
 ﻿using CSharp_Tutorials.Class;
 using CSharp_Tutorials.Exercises;
-using CSharp_Tutorials.Object_Oriented_Programming;
+//using CSharp_Tutorials.Object_Oriented_Programming;
 using CSharp_Tutorials.Object_Oriented_Programming.Holding_a_Class_Responsible;
 using CSharp_Tutorials.Object_Oriented_Programming.Let_Me_Say_About_this;
 using CSharp_Tutorials.Object_Oriented_Programming.We_Have_Our_Methods;
@@ -8,6 +8,7 @@ using InheritanceExample;
 using System;
 using System.Runtime.InteropServices;
 using SimpleSavingsAccount;
+using IS_A_And_HAS_A;
 
 namespace MyNameSpace
 {
@@ -20,7 +21,7 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                              
-            Console.WriteLine(CodeExecises.SpecifiedWord("Hello how are you?", "Hi"));
+            //Console.WriteLine(CodeExecises.Specifiedord("Hello how are you?", "Hi"));
             #region For Introduction Class Example
             //string[] s = new string[1];
             //s[0] = "D:\\Teaching Purposes\\dmc\\Other Projects 2019-2020\\Graduation Design";
@@ -58,6 +59,9 @@ namespace MyNameSpace
             //double y = Convert.ToDouble(Console.ReadLine());
             //Methods.DisplayRation(x,y);
             //SimpleSavingsAccountClass.SimpleSavingsAccountClassMain();
+            Car cr = new Car();                        
+            cr.InitCar("YAMAHA", "YAMAHA","Sniper",4);
+            Console.WriteLine("The manufacturer of this vehicle is {0}",cr.Manufacturer);
             #endregion
         } 
     }
