@@ -9,6 +9,8 @@ using System;
 using System.Runtime.InteropServices;
 using SimpleSavingsAccount;
 using IS_A_And_HAS_A;
+using InheritingAConstructor;
+using PassingArgsNameSpace;
 
 namespace MyNameSpace
 {
@@ -59,7 +61,7 @@ namespace MyNameSpace
             //double y = Convert.ToDouble(Console.ReadLine());
             //Methods.DisplayRation(x,y);
             //SimpleSavingsAccountClass.SimpleSavingsAccountClassMain();
-            Substitutable.TestCast();
+            PassingArgsWithbase.PassingArgsMain();
             #endregion
         } 
     }
