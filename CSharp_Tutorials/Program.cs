@@ -59,9 +59,7 @@ namespace MyNameSpace
             //double y = Convert.ToDouble(Console.ReadLine());
             //Methods.DisplayRation(x,y);
             //SimpleSavingsAccountClass.SimpleSavingsAccountClassMain();
-            Car cr = new Car();                        
-            cr.InitCar("YAMAHA", "YAMAHA","Sniper",4);
-            Console.WriteLine("The manufacturer of this vehicle is {0}",cr.Manufacturer);
+            Substitutable.TestCast();
             #endregion
         } 
     }

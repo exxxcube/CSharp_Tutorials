@@ -24,7 +24,7 @@ namespace IS_A_And_HAS_A
         // This is an example of HAS_A relationship in inheritance        
         Motor motor;  // means the class Model HAS_A class Motor.
         
-        internal void StartEngine()
+        protected void StartEngine()
         {
             motor.Horsepower = 100;
         }

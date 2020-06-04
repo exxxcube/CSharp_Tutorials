@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -145,4 +146,47 @@ namespace SimpleSavingsAccount
             Console.Read();
         }
     }
+
+    #region Substitutable class
+    class Substitutable
+    {
+        private static void MainProg()
+        {
+            BankAccount ba;
+            SavingsAccount sa = new SavingsAccount();
+            // OK:
+            ba = sa;                    // Implicitly converting subclass to base class.
+            ba = (BankAccount)sa;       // But the explicit cast is preferred.
+//          sa = ba;                    // ERROR: Implicitly converting base class to subclass
+            sa = (SavingsAccount)ba;    // An explicit cast is allowed, however.
+        }
+        #region Invalid casts at run time
+        public static void ProcessAmount(BankAccount bankAccount)
+        {
+            // Deposit a large sum to the account.
+            bankAccount.Deposit(10000.0M);
+            if (bankAccount is SavingsAccount)
+            {                
+                #region Avoiding invalid conversions with the as operator
+                // ...then collect interest now (cast is guaranteed to work).                
+                SavingsAccount savingsAccount = bankAccount as SavingsAccount;
+                if (savingsAccount != null)
+                    savingsAccount.AccumulateInterest();   // Go ahead and use savingsAccount.
+                // Otherwise, don’t use it: generate an error message yourself.
+                #endregion
+            }
+            // Otherwise, don’t do the cast -- but why is BankAccount not what
+            // you expected? This could be an error situation.
+        }
+        public static void TestCast()
+        {
+            SavingsAccount sa = new SavingsAccount();
+            ProcessAmount(sa);
+            BankAccount ba = new BankAccount();
+            ProcessAmount(ba);
+        }
+        #endregion
+    }
+    #endregion
+
 }
