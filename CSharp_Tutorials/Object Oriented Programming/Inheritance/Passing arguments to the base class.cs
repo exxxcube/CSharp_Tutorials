@@ -42,7 +42,7 @@ namespace PassingArgsNameSpace
     //    }
     //}
     #endregion
-    #region MyRegion
+    #region PassingArgs but with base keyword
     public class PassingArgsWithbase
     {
         public static void PassingArgsMain()
@@ -73,7 +73,7 @@ namespace PassingArgsNameSpace
         {
             Console.WriteLine("Constructing SubClass(default)");
         }
-        public SubClass(int i1, int i2) : base(i1)
+        public SubClass(int i1, int i2) : base(i1) // This is the base keyword
         {
             Console.WriteLine("Constructing SubClass({0}, {1})",i1,i2);
         }

@@ -11,6 +11,7 @@ using SimpleSavingsAccount;
 using IS_A_And_HAS_A;
 using InheritingAConstructor;
 using PassingArgsNameSpace;
+using ConstructorSavingsAccount;
 
 namespace MyNameSpace
 {
@@ -23,7 +24,7 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                              
-            //Console.WriteLine(CodeExecises.Specifiedord("Hello how are you?", "Hi"));
+            Console.WriteLine(CodeExecises.StringStartsWithw("www"));
             #region For Introduction Class Example
             //string[] s = new string[1];
             //s[0] = "D:\\Teaching Purposes\\dmc\\Other Projects 2019-2020\\Graduation Design";
@@ -51,17 +52,7 @@ namespace MyNameSpace
             #endregion
 
             #region For Object Oriented Programming
-            ////Methods example = new Methods();
-            ////example.InstanceMethod();       // Invoke the instance method
-            ////                                // with that instance.
-            ////Methods.ClassMethod();          // Invoke the class method with the class.
-            ////                                // If the method is static
-            ////CalculateInterestTableWithMethods.CalculateInterestTableWithMethodsMain();
-            //double x = Convert.ToDouble(Console.ReadLine());
-            //double y = Convert.ToDouble(Console.ReadLine());
-            //Methods.DisplayRation(x,y);
-            //SimpleSavingsAccountClass.SimpleSavingsAccountClassMain();
-            PassingArgsWithbase.PassingArgsMain();
+            
             #endregion
         } 
     }

@@ -9,6 +9,7 @@ using System.IO;
 using System.Net.Http.Headers;
 using System.Security;
 using System.Net.Mail;
+using System.Data;
 
 namespace CSharp_Tutorials.Exercises
 {
@@ -450,6 +451,99 @@ namespace CSharp_Tutorials.Exercises
                 return true;
             return false;
         }
+        public static bool TwoGivinNumbers(int i, int j)
+        {
+            //35.Write a C# program to check two given numbers
+            //where one is less than 100 and other is greater than 200.
+            if ((i < 100) && (j > 200))
+                return true;
+            return false;
+        }
+        public static bool ChekingInteger(int i, int j)
+        {
+            // 36.Write a C# program to check if an integer (from the two given integers)
+            // is in the range -10 to 10.
+            if ((i >= -10 && i <= 10) && (j >= -10 && j <= 10))
+                return true;
+            return false;
+        }
+        public static string CheckForHP(string s)
+        {
+            // 37. Write a C# program to check if "HP"
+            // appears at second position in a string and returns the string without "HP".
+            if (s.Substring(1, 2) == "HP")
+                return String.Format(s.Remove(1,2));
+            return null;
+        }
+        public static string NewStringofTwoCharacters(string s)
+        {
+            // 38.Write a C# program to get a new string of two characters
+            // from a given string. The first and second character of the
+            // given string must be "P" and "H", so PHP will be "PH".
+            if (s.Substring(0, 2) == "PH")
+                return String.Format(s.Substring(0, 2));
+            return null;
+        }
+        public static string LargestandLowest(int i, int j, int x)
+        {
+            // 39. Write a C# program to find the largest
+            // and lowest values from three integer values.
+            int[] arr = { i, j, x}; //Pwede di ay ni HEHEHEHEHE!!
+            Array.Reverse(arr);
+            return String.Format("The Largest is {0} and the lowest is {1}", arr[0], arr[arr.Length - 1]);
+        }
+        public static int CheckNearestValueof20(int i, int j)
+        {
+            // 40. Write a C# program to check the nearest
+            // value of 20 of two given integers and return 0
+            // if two numbers are same.
+            if (i == j)
+                return 0;
+            else
+            {
+                if (i <= 20 && j <= 20)
+                {
+                    int[] arr = { i, j };
+                    arr.Reverse();
+                    return arr[0];
+                }
+            }
+            return 0;
+        }
+        public static bool ContainsLetterW(string s)
+        {
+            // 41. Write a C# program to check if a given string
+            // contains ‘w’ character between 1 and 3 times.
+            int count = 0;
+            foreach (var item in s)
+            {
+                if (s.Contains('w'))
+                    count++;
+            }
+            if (count == 1 || count == 3)
+                return true;
+            return false;
+        }
+        public static string FourLowerCase(string s)
+        {
+            // 42. Write a C# program to create a new string where the first 4
+            // characters will be in lower case. If the string is less than 4
+            // characters then make the whole string in upper case.
+            if (s.Length < 4)
+                return s.ToUpper();
+            return String.Format(s.Substring(0, 4).ToLower() + s.Substring(4,s.Length-4).ToUpper());
+        }
+        public static bool StringStartsWithw(string s)
+        {
+            //43. Write a C# program to check if a given string
+            //starts with "w" and immediately followed by two "ww".
+            if (s.Substring(0, 1) == "w")
+            {
+                if (s.Substring(0, 2) == "ww")
+                    return true;
+            }
+            return false;
+        } //Galibug ko ani
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
         {
