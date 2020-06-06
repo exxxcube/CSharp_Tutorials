@@ -529,9 +529,13 @@ namespace CSharp_Tutorials.Exercises
             // 42. Write a C# program to create a new string where the first 4
             // characters will be in lower case. If the string is less than 4
             // characters then make the whole string in upper case.
-            if (s.Length < 4)
-                return s.ToUpper();
-            return String.Format(s.Substring(0, 4).ToLower() + s.Substring(4,s.Length-4).ToUpper());
+
+            // Good practice means avoiding modifying an input parameter.
+            // Modify a copy.
+            string temp = s;
+            if (temp.Length < 4)
+                return temp.ToUpper();
+            return String.Format(temp.Substring(0, 4).ToLower() + temp.Substring(4, temp.Length-4).ToUpper());
         }
         public static bool StringStartsWithw(string s)
         {
