@@ -25,7 +25,7 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                              
-            //Console.WriteLine(CodeExecises.StringStartsWithw("www"));
+            Console.WriteLine(CodeExecises.CountNumbers(5, new int[] { 2, 2, 2}));
             #region For Introduction Class Example
             //string[] s = new string[1];
             //s[0] = "D:\\Teaching Purposes\\dmc\\Other Projects 2019-2020\\Graduation Design";
@@ -53,7 +53,7 @@ namespace MyNameSpace
             #endregion
 
             #region For Object Oriented Programming
-            HidingWithdrawalClass.HidingWithdrawalMain();
+            
             #endregion
         } 
     }

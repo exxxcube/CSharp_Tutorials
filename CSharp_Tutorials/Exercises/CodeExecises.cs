@@ -548,6 +548,35 @@ namespace CSharp_Tutorials.Exercises
             }
             return false;
         } //Galibug ko ani
+        public static string OddPosition(string s)
+        {
+            // 44. Write a C# program to create a new string of
+            // every other character (odd position) from the first position of a given string.
+            char[] stemp = s.ToArray();
+            string rslt = "";
+            int count = 0;
+            while (true)
+            {
+                rslt += stemp[count].ToString();
+                count += 2;
+                if (count == stemp.Length)
+                    break;
+            }
+            return rslt;
+        }
+        public static int CountNumbers(int i, int[] listonumbers)
+        {
+            //45. Write a C# program to count a specified number in a given array of integers.
+            int itemp = i;
+            int[] arrtemp = listonumbers;
+            int count = 0;
+            foreach (var item in arrtemp)
+            {
+                if (item == itemp)
+                    count++;
+            }
+            return count;
+        }
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
         {
