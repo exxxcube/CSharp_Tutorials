@@ -577,6 +577,20 @@ namespace CSharp_Tutorials.Exercises
             }
             return count;
         }
+        public static bool AppearsInTheList(int i, int[] listofnumbers)
+        {
+            // 46. Write a C# program to check if a number appears as either the first or
+            // last element of an array of integers and the length is 1 or more.
+            string itemp = i.ToString();
+            int[] arrtemp = listofnumbers;
+            if (itemp.ToCharArray().Length > 1)
+            {
+                if ((Array.LastIndexOf(arrtemp, Convert.ToInt32(itemp)) == arrtemp.Length - 1) 
+                    || (arrtemp[0].ToString() == itemp))
+                    return true;
+            }
+            return false;
+        }
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
         {
