@@ -585,8 +585,88 @@ namespace CSharp_Tutorials.Exercises
             int[] arrtemp = listofnumbers;
             if (itemp.ToCharArray().Length > 1)
             {
-                if ((Array.LastIndexOf(arrtemp, Convert.ToInt32(itemp)) == arrtemp.Length - 1) 
+                if ((arrtemp[arrtemp.Length - 1] == Convert.ToInt32(itemp)) 
                     || (arrtemp[0].ToString() == itemp))
+                    return true;
+            }
+            return false;
+        }
+        public static int SumOfAllTheArray(int[] iarr)
+        {
+            //47. Write a C# program to compute the sum of all the elements of an array of integers.
+            int[] arrtemp = iarr;
+            int sumofallarr = 0;
+            foreach (var item in arrtemp)
+                sumofallarr += item;
+            return sumofallarr;
+        }
+        public static bool AppearsInFirstAndLast(int i, int[] iarr)
+        {
+            // 48. Write a C# program to check if the first element
+            // and the last element are equal of an array of integers and the length is 1 or more.
+            string itemp = i.ToString();
+            int[] arrtemp = iarr;
+            if (itemp.ToCharArray().Length >= 1)
+            {
+                if ((arrtemp[arrtemp.Length - 1] == Convert.ToInt32(itemp))
+                    && (arrtemp[0].ToString() == itemp))
+                    return true;
+            }
+            return false;
+        }
+        public static bool CheckTheTwoArrFirstAndLast(int[] i, int[] j)
+        {
+            // 49. Write a C# program to check if the first element
+            // or the last element of the two arrays ( length 1 or more) are equal.
+            int[] iarrtemp = i;
+            int[] jarrtemp = j;
+            if (i.Length < 1 || j.Length < 1)
+                return false;
+            if (iarrtemp[iarrtemp.Length - 1] == jarrtemp[jarrtemp.Length - 1] ||
+               iarrtemp[0] == jarrtemp[0])
+                return true;
+            return false;
+        }
+        public static int[] Rotate_an_Array(int[] i)
+        {
+            // 50. Write a C# program to rotate an array (length 3) of integers in left direction.
+            int[] itemp = i;
+            int temp = 0;
+            for (int inner = 0; inner < itemp.Length-1; inner++)
+            {
+                temp = itemp[inner];
+                itemp[inner] = itemp[inner + 1];
+                itemp[inner + 1] = temp;
+            }            
+            return itemp;
+        }
+        public static int BetweenTheFirstAndTheLast(int[] arri)
+        {
+            // 51. Write a C# program to get the larger value between first
+            // and last element of an array (length 3) of integers.
+            int[] itemp = arri;
+            int i = itemp[0]; int j = itemp[itemp.Length - 1];
+            if (i <= j)
+                return j;
+            return i;
+        }
+        public static int[] MiddleArrays(int[] arri,int[] arry,int[] arrz)
+        {
+            // 52. Write a C# program to create a new array of length containing
+            // the middle elements of three arrays (each length 3) of integers.
+            int middle1 = ((1 + arri.Length) / 2) - 1 ; int middle2 = ((1 + arry.Length) / 2) - 1;
+            int middle3 = ((1 + arrz.Length) / 2)- 1;
+            int[] temp = { arri[middle1], arry[middle2], arrz[middle3] };
+
+            return temp;
+        }
+        public static bool ContainsOddNumber(int[] arri)
+        {
+            //53. Write a C# program to check if an array contains an odd number.
+            int[] temp = arri;
+            foreach (var item in temp)
+            {
+                if (item % 2 != 0)
                     return true;
             }
             return false;

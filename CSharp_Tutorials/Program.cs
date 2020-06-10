@@ -26,12 +26,12 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                              
-            Console.WriteLine(CodeExecises.AppearsInTheList(25, new int[] { 2, 25, 2}));
+            //Console.WriteLine(CodeExecises.ContainsOddNumber(new int[] { 2, 4, 10, 8, 6 }));
+
             #region For Introduction Class Example
             //string[] s = new string[1];
             //s[0] = "D:\\Teaching Purposes\\dmc\\Other Projects 2019-2020\\Graduation Design";
             //MoreCollectionExample.IteratingThroughADirectoryOfFiles(s);
-
             #endregion
 
             #region For KeyedArray Example
