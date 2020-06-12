@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 
 namespace CSharp_Tutorials.Class
@@ -1298,6 +1299,12 @@ namespace CSharp_Tutorials.Class
             //Initializing dictionaries with the new syntax looks like this:
             Dictionary<int, string> dict = new Dictionary<int, string>
                                             { { 1,"Sam"} , { 2, "Joe"} };
+        }
+        public static ReadOnlyCollection<string> UsingReadOnlyCollection(List<string> s)
+        {
+            List<string> tempString = s;
+            ReadOnlyCollection<string> readonlyCollection = tempString.AsReadOnly();
+            return readonlyCollection; // returns a collection of readonly list of strings
         }
         public static void UsingSets()
         {

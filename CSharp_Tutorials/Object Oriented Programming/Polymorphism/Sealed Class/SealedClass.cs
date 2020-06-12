@@ -20,11 +20,11 @@ namespace SealingAClass
             Console.WriteLine("invokes SavingsAccount.Withdraw()");
         }
     }
-    public class SpecialSaleAccount : SavingsAccount //Error
-    {
-        override public void Withdraw(decimal withdrawal)
-        {
-            Console.WriteLine("invokes SpecialSaleAccount.Withdraw()");
-        }
-    }
+    //public class SpecialSaleAccount : SavingsAccount //Error
+    //{
+    //    override public void Withdraw(decimal withdrawal)
+    //    {
+    //        Console.WriteLine("invokes SpecialSaleAccount.Withdraw()");
+    //    }
+    //}
 }

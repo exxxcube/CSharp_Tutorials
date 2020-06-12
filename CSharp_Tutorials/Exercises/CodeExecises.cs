@@ -671,6 +671,45 @@ namespace CSharp_Tutorials.Exercises
             }
             return false;
         }
+        public static decimal GetCentury(int year)
+        {
+            //54. Write a C# program to get the century from a year.
+            int computeYear = year;
+            decimal century = computeYear / 100;
+            return century;
+        }
+        public static bool Adjacent(int[] listofnumbers, int toCompare)
+        {
+            // 55. Write a C# program to find the pair of adjacent elements
+            // that has the largest product of an given array which is equal to a given value.
+            int[] temparr = listofnumbers;            
+            int counter = 0;
+            int product;
+            while (counter < temparr.Length)
+            {
+                product = temparr[counter] * temparr[counter + 1];
+                if (product == toCompare)
+                    return true;
+                counter += 2;
+            }
+            return false;
+        }
+        public static bool Palindrome(string s)
+        {
+            //56. Write a C# program to check if a given string is a palindrome or not.
+            string tempstring = s;
+            char[] c = tempstring.ToArray();
+            Array.Reverse(c);
+            return new string(c).Equals(s);
+            //string temp = "";
+            //char[] c = tempstring.ToArray();
+            //Array.Reverse(c);
+            //foreach (var item in c)
+            //    temp += item.ToString();
+            //if(temp == s)
+            //    return true;
+            //return false;
+        }        
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
         {

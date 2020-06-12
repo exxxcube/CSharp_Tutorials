@@ -14,6 +14,9 @@ using PassingArgsNameSpace;
 using ConstructorSavingsAccount;
 using PolymorphicInheritance;
 using AbstractInheritance;
+using SortInterface;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace MyNameSpace
 {
@@ -26,12 +29,13 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                              
-            //Console.WriteLine(CodeExecises.ContainsOddNumber(new int[] { 2, 4, 10, 8, 6 }));
+            Console.WriteLine(CodeExecises.Palindrome("aaa"));
+            //char[] a = { 'a', 'b', 'c' };
+            //Array.Reverse(a);
+            //Console.WriteLine(a);
 
             #region For Introduction Class Example
-            //string[] s = new string[1];
-            //s[0] = "D:\\Teaching Purposes\\dmc\\Other Projects 2019-2020\\Graduation Design";
-            //MoreCollectionExample.IteratingThroughADirectoryOfFiles(s);
+            //Collections.UsingReadOnlyCollection(new List<string> { "a", "b" });
             #endregion
 
             #region For KeyedArray Example
@@ -54,7 +58,7 @@ namespace MyNameSpace
             #endregion
 
             #region For Object Oriented Programming
-            //AbstractInheritanceProg.AbstractInheritanceMain();
+            //SortInterfaceProg.SortInterfaceMain();
             #endregion
         } 
     }
