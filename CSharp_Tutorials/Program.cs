@@ -29,7 +29,8 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                              
-            Console.WriteLine(CodeExecises.Palindrome("aaa"));
+
+            CodeExecises.SortExcept(new int[] { 2,1,-5,8,3});
             //char[] a = { 'a', 'b', 'c' };
             //Array.Reverse(a);
             //Console.WriteLine(a);

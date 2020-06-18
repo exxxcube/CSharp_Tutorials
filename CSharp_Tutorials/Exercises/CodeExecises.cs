@@ -709,7 +709,107 @@ namespace CSharp_Tutorials.Exercises
             //if(temp == s)
             //    return true;
             //return false;
-        }        
+        }
+        public static int AdjucentNumbersPickHighest(int[] arr)
+        {
+            // 57. Write a C# program to find the pair of adjacent
+            // elements that has the highest product of an given array of integers.            
+            int higherNum = 0;
+            int temp = 0;
+            if (arr.Length <= 1)
+                return arr[0];
+            for (int counter = 0; counter < arr.Length -1; counter++)
+            {
+                temp = arr[counter] * arr[counter + 1];
+                if (higherNum < temp || higherNum == 0)
+                    higherNum = temp;
+            }
+            return higherNum;
+        }
+        public static int NumNeeded(int[] arr, int rangeMin, int rangeMax)
+        {
+            // 58. Write a C# program which will accept a list
+            // of integers and checks how many integers are needed to complete the range.
+            int[] arrtemp = arr;
+            int counter = 0;
+            if (arr.Length <= 0)
+                return 0;
+            for (int i = rangeMin; i <= rangeMax; i++)
+            {
+                if (!arrtemp.Contains(i))
+                    counter++;
+            }
+            return counter;
+        }
+        public static bool Strict_increasing_sequence(int[] arr)
+        {
+            // 59. Write a C# program to check whether it is possible to create a
+            // strictly increasing sequence from a given sequence of integers as an array.
+            int[] arrtemp = arr;
+            int counter = 0;
+            if (arrtemp.Length < 0)
+                return false;
+            while (counter < arrtemp.Length-1)
+            {
+                if (arrtemp[counter] < arrtemp[counter + 1])
+                    counter++;
+                else
+                    return false;
+            }
+            return true;
+        }
+        public static int Matrix(int[,] arrx) // int[rows,columns] arrx is a multideminsional array
+        {
+            // 60. Write a C# program to calculate the sum of all the integers of a
+            // rectangular matrix except those integers which are located below an integer of value 0.
+            int[,] arrtemp = arrx;
+            int sum = 0;            
+            for (int i = 0; i <= arrtemp.GetLength(0) - 1; i++)
+            {
+                int j = 0;
+                while (j <= arrtemp.GetLength(1) - 2)
+                {
+                    if (arrtemp[i, j] == 0 || arrtemp[i, j + 1] == 0)
+                    {
+                        if (arrtemp[i, j] == 0)
+                            sum += arrtemp[i, j + 1];
+                    }
+                    else
+                        sum += arrtemp[i, j] + arrtemp[i, j + 1];
+                    j += 2;
+                }
+            }
+            return sum;
+
+            //int x = 0;
+            //for (int i = 0; i < my_matrix[0].Length; i++)
+            //    for (int j = 0; j < my_matrix.Length && my_matrix[j][i] > 0; j++)
+            //        x += my_matrix[j][i];
+            //return x;
+        }
+        public static void SortExcept(int[] arrx)
+        {
+            // 61. Write a C# program to sort the integers
+            // in ascending order without moving the number -5
+            int[] arrtemp = arrx.Where(x => x != -5).OrderBy(x => x).ToArray();
+            int ctr = 0;
+            int[] arrResult = arrx.Select(x => x >= 0 ? arrtemp[ctr++] : -5).ToArray();
+            // the ? symbol is if
+            // if x >=0 then arrtemp[ctr++] else -5
+
+            //display arrray
+            foreach (var item in arrResult)
+                Console.Write(item);
+        }
+        public static void Name(string s)
+        {
+            //62. Write a C# program to reverse the strings contained in each pair
+            //of matching parentheses in a given string and also remove the parentheses
+            //within the given string.
+            string stemp = s;
+            
+
+        }
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
         {
