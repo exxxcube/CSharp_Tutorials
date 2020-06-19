@@ -12,6 +12,10 @@ namespace AbstractInheritance
     {
         // Output -- Abstract method that outputs a string
         abstract public void Output(string outputString);
+        public void asd()
+        {
+            Console.WriteLine("asdsad");
+        } // Can also impletement methods with bodies
     }
     // SubClass1 -- One concrete implementation of AbstractBaseClass
      class SubClass1 : AbstractBaseClass // The AbstractBaseClass must be inherit

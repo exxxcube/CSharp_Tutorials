@@ -30,7 +30,7 @@ namespace MyNameSpace
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                              
 
-            CodeExecises.SortExcept(new int[] { 2,1,-5,8,3});
+            Console.WriteLine(CodeExecises.If30andIfSumis30(15,10));
             //char[] a = { 'a', 'b', 'c' };
             //Array.Reverse(a);
             //Console.WriteLine(a);

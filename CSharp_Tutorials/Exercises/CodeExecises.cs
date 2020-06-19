@@ -15,17 +15,18 @@ namespace CSharp_Tutorials.Exercises
 {
     public class CodeExecises
     {
+        #region Basic Problems
         public static void Hello()
         {
             string name = "Exxxcube";
-            Console.WriteLine("Hello " +name);
+            Console.WriteLine("Hello " + name);
         }
         public static void ResultOfTwoNumbers(int i, int j)
-        {            
-            Console.WriteLine("Sum: {0} "                 , i + j);
-            Console.WriteLine("Subtract: {0} "            , i - j);
-            Console.WriteLine("SumMultiplication: {0} "   , i * j);
-            Console.WriteLine("Divide: {0} "              , i / j);
+        {
+            Console.WriteLine("Sum: {0} ", i + j);
+            Console.WriteLine("Subtract: {0} ", i - j);
+            Console.WriteLine("SumMultiplication: {0} ", i * j);
+            Console.WriteLine("Divide: {0} ", i / j);
         }
         public static void ResultOfTheSpecifiedOperations()
         {
@@ -46,19 +47,19 @@ namespace CSharp_Tutorials.Exercises
             Console.WriteLine("Input the Second Number: ");
             string v = Console.ReadLine();
             Console.WriteLine("After Swapping");
-            Console.WriteLine("First Number: "+v);
-            Console.WriteLine("Second Number: "+s);
+            Console.WriteLine("First Number: " + v);
+            Console.WriteLine("Second Number: " + s);
         }
         public static void OutputOfMultiplication()
         {
             //Write a C# Sharp program to print the output of multiplication of
             //three numbers which will be entered by the user.
             string x = Console.ReadLine();
-            char[] separator = { ' ', '\n', '\t' };           
+            char[] separator = { ' ', '\n', '\t' };
             string[] split = x.Split(separator);
             split = split.Where(c => !string.IsNullOrEmpty(c)).ToArray();
             Console.WriteLine(Multiply(split));
-        }        
+        }
         public static void PrintOperatorResult()
         {
             //Write a C# Sharp program to print on screen the output of adding,
@@ -83,8 +84,8 @@ namespace CSharp_Tutorials.Exercises
             const int y = 10;
             Console.WriteLine("Multiplication of {0}", n);
             for (int i = 0; i <= y; i++)
-            {                
-                Console.WriteLine("{0} * {1} = {2}",n,i,n*i);
+            {
+                Console.WriteLine("{0} * {1} = {2}", n, i, n * i);
             }
         }
         public static void AverageOfFourInputs()
@@ -108,9 +109,9 @@ namespace CSharp_Tutorials.Exercises
             for (int inner = 0; inner < arryNum.Length; inner++)
             {
                 temp += arryNum[inner];
-            }            
+            }
             Console.WriteLine("The average of {0} , {1} , {2} , {3} is: {4}",
-                arryNum[0], arryNum[1],arryNum[2], arryNum[3], temp / arryNum.Length);
+                arryNum[0], arryNum[1], arryNum[2], arryNum[3], temp / arryNum.Length);
         }
         public static void ThreeNumbers()
         {
@@ -126,11 +127,11 @@ namespace CSharp_Tutorials.Exercises
             Console.Write("Enter third number: ");
             string str = Console.ReadLine();
             int.TryParse(str, out arrNum[2]);
-            Console.WriteLine("Result of specified numbers {0}"+
-                              ", {1}, and {2}, ({0} + {1}).{2} is {3} and "+
-                              "{0} . {1} + {1} . {2} is {4}",arrNum[0], arrNum[1],
-                              arrNum[2],(arrNum[0]+ arrNum[1])* arrNum[2],
-                              arrNum[0]* arrNum[1]+ arrNum[1]* arrNum[2]);
+            Console.WriteLine("Result of specified numbers {0}" +
+                              ", {1}, and {2}, ({0} + {1}).{2} is {3} and " +
+                              "{0} . {1} + {1} . {2} is {4}", arrNum[0], arrNum[1],
+                              arrNum[2], (arrNum[0] + arrNum[1]) * arrNum[2],
+                              arrNum[0] * arrNum[1] + arrNum[1] * arrNum[2]);
         }
         public static void YouLookOlder()
         {
@@ -138,7 +139,7 @@ namespace CSharp_Tutorials.Exercises
             //input and prints something as "You look older than 20".
             Console.Write("Enter your age: ");
             string x = Console.ReadLine();
-            Console.WriteLine("You look older than {0}",x);
+            Console.WriteLine("You look older than {0}", x);
         }
         public static void FourTimesInARow(int n)
         {
@@ -150,12 +151,12 @@ namespace CSharp_Tutorials.Exercises
             {
                 for (int j = 0; j <= 4; j++)
                 {
-                    Console.Write(n + " ");                    
+                    Console.Write(n + " ");
                 }
                 Console.WriteLine();
                 for (int k = 0; k <= 4; k++)
                 {
-                    Console.Write(n);                    
+                    Console.Write(n);
                 }
                 Console.WriteLine();
             }
@@ -166,13 +167,13 @@ namespace CSharp_Tutorials.Exercises
             //a rectangle of 3 columns wide and 5 rows tall using that digit.
             Console.Write("Enter a number: ");
             string s = Console.ReadLine();
-            int col = 3;            
+            int col = 3;
 
             for (int i = 0; i < col; i++)
                 Console.Write(s);
             Console.WriteLine();
             for (int i = 0; i < col; i++)
-                Console.WriteLine(s.PadRight(col - 1)+s);
+                Console.WriteLine(s.PadRight(col - 1) + s);
             for (int i = 0; i < col; i++)
                 Console.Write(s);
         }
@@ -181,9 +182,9 @@ namespace CSharp_Tutorials.Exercises
             //Write a C# program to convert from celsius degrees to Kelvin and Fahrenheit.
             Console.Write("Enter amount of celsius: ");
             string s = Console.ReadLine();
-            double i; double.TryParse(s,out i);
-            Console.WriteLine("Kelvin = {0}",CelsiusToKelvin(i));
-            Console.WriteLine("Fahrenheit = {0}",CelsiusToFahrenheit(i));            
+            double i; double.TryParse(s, out i);
+            Console.WriteLine("Kelvin = {0}", CelsiusToKelvin(i));
+            Console.WriteLine("Fahrenheit = {0}", CelsiusToFahrenheit(i));
         }
         public static string LetterRemover(char c)
         {
@@ -200,8 +201,8 @@ namespace CSharp_Tutorials.Exercises
             //16. Write a C# program to create a new 
             //string from a given string where the first and last
             //characters will change their positions.
-            char temp = s[s.Length-1];
-            char firstChar = s[0];            
+            char temp = s[s.Length - 1];
+            char firstChar = s[0];
             return temp + s.Substring(1, s.Length - 2) + firstChar;
         }
         public static string OneCharacterFromFirstToLast(string s)
@@ -241,12 +242,12 @@ namespace CSharp_Tutorials.Exercises
             if (x > y)
             {
                 temp = (x - y) * 2;
-                if(temp < 0)
+                if (temp < 0)
                     return temp * -1;
                 return temp;
             }
             else
-                return (x - y) * -1;            
+                return (x - y) * -1;
         }
         public static bool IfTwenty(int x, int y)
         {
@@ -265,7 +266,7 @@ namespace CSharp_Tutorials.Exercises
             int checkIn100 = n - 100;
             int checkIn200 = n - 200;
 
-            if ((checkIn100 * -1) <= 20 || (checkIn200 * -1) <= 20)          
+            if ((checkIn100 * -1) <= 20 || (checkIn200 * -1) <= 20)
                 return true;
             return false;
         }
@@ -285,7 +286,7 @@ namespace CSharp_Tutorials.Exercises
             {
                 if (item.Length > startingPoint)
                 {
-                    temp = Array.IndexOf(arr,item);
+                    temp = Array.IndexOf(arr, item);
                     startingPoint = item.Length;
                 }
             }
@@ -306,7 +307,7 @@ namespace CSharp_Tutorials.Exercises
             //Prints one number per line.
             for (int i = 1; i <= n; i++)
             {
-                if((i % 2) == 1)
+                if ((i % 2) == 1)
                     Console.WriteLine(i);
             }
         }
@@ -358,14 +359,14 @@ namespace CSharp_Tutorials.Exercises
             Array.Reverse(temp);
             foreach (var item in temp)
             {
-                Console.Write(item+ " ");
+                Console.Write(item + " ");
             }
             Console.WriteLine();
         }
         public static long SpecifiedFile(string s)
         {
             //29. Write a C# program to find the size of a specified file in bytes.
-            FileInfo f = new FileInfo(s);                        
+            FileInfo f = new FileInfo(s);
             return f.Length;
         }
         public static int HexToDec(string s)
@@ -441,9 +442,9 @@ namespace CSharp_Tutorials.Exercises
             // is a multiple of 3 or a multiple of 7.
             if ((i % 3) == 0 || (i % 7) == 0)
                 return true;
-            return false;   
+            return false;
         }
-        public static bool SpecifiedWord(string sentence,string firstword)
+        public static bool SpecifiedWord(string sentence, string firstword)
         {
             // 34. Write a C# program to check if a string starts with a specified word.
             string temp = sentence.Substring(0, firstword.Length);
@@ -472,7 +473,7 @@ namespace CSharp_Tutorials.Exercises
             // 37. Write a C# program to check if "HP"
             // appears at second position in a string and returns the string without "HP".
             if (s.Substring(1, 2) == "HP")
-                return String.Format(s.Remove(1,2));
+                return String.Format(s.Remove(1, 2));
             return null;
         }
         public static string NewStringofTwoCharacters(string s)
@@ -488,7 +489,7 @@ namespace CSharp_Tutorials.Exercises
         {
             // 39. Write a C# program to find the largest
             // and lowest values from three integer values.
-            int[] arr = { i, j, x}; //Pwede di ay ni HEHEHEHEHE!!
+            int[] arr = { i, j, x }; //Pwede di ay ni HEHEHEHEHE!!
             Array.Reverse(arr);
             return String.Format("The Largest is {0} and the lowest is {1}", arr[0], arr[arr.Length - 1]);
         }
@@ -535,7 +536,7 @@ namespace CSharp_Tutorials.Exercises
             string temp = s;
             if (temp.Length < 4)
                 return temp.ToUpper();
-            return String.Format(temp.Substring(0, 4).ToLower() + temp.Substring(4, temp.Length-4).ToUpper());
+            return String.Format(temp.Substring(0, 4).ToLower() + temp.Substring(4, temp.Length - 4).ToUpper());
         }
         public static bool StringStartsWithw(string s)
         {
@@ -585,7 +586,7 @@ namespace CSharp_Tutorials.Exercises
             int[] arrtemp = listofnumbers;
             if (itemp.ToCharArray().Length > 1)
             {
-                if ((arrtemp[arrtemp.Length - 1] == Convert.ToInt32(itemp)) 
+                if ((arrtemp[arrtemp.Length - 1] == Convert.ToInt32(itemp))
                     || (arrtemp[0].ToString() == itemp))
                     return true;
             }
@@ -632,12 +633,12 @@ namespace CSharp_Tutorials.Exercises
             // 50. Write a C# program to rotate an array (length 3) of integers in left direction.
             int[] itemp = i;
             int temp = 0;
-            for (int inner = 0; inner < itemp.Length-1; inner++)
+            for (int inner = 0; inner < itemp.Length - 1; inner++)
             {
                 temp = itemp[inner];
                 itemp[inner] = itemp[inner + 1];
                 itemp[inner + 1] = temp;
-            }            
+            }
             return itemp;
         }
         public static int BetweenTheFirstAndTheLast(int[] arri)
@@ -650,12 +651,12 @@ namespace CSharp_Tutorials.Exercises
                 return j;
             return i;
         }
-        public static int[] MiddleArrays(int[] arri,int[] arry,int[] arrz)
+        public static int[] MiddleArrays(int[] arri, int[] arry, int[] arrz)
         {
             // 52. Write a C# program to create a new array of length containing
             // the middle elements of three arrays (each length 3) of integers.
-            int middle1 = ((1 + arri.Length) / 2) - 1 ; int middle2 = ((1 + arry.Length) / 2) - 1;
-            int middle3 = ((1 + arrz.Length) / 2)- 1;
+            int middle1 = ((1 + arri.Length) / 2) - 1; int middle2 = ((1 + arry.Length) / 2) - 1;
+            int middle3 = ((1 + arrz.Length) / 2) - 1;
             int[] temp = { arri[middle1], arry[middle2], arrz[middle3] };
 
             return temp;
@@ -682,7 +683,7 @@ namespace CSharp_Tutorials.Exercises
         {
             // 55. Write a C# program to find the pair of adjacent elements
             // that has the largest product of an given array which is equal to a given value.
-            int[] temparr = listofnumbers;            
+            int[] temparr = listofnumbers;
             int counter = 0;
             int product;
             while (counter < temparr.Length)
@@ -718,7 +719,7 @@ namespace CSharp_Tutorials.Exercises
             int temp = 0;
             if (arr.Length <= 1)
                 return arr[0];
-            for (int counter = 0; counter < arr.Length -1; counter++)
+            for (int counter = 0; counter < arr.Length - 1; counter++)
             {
                 temp = arr[counter] * arr[counter + 1];
                 if (higherNum < temp || higherNum == 0)
@@ -749,7 +750,7 @@ namespace CSharp_Tutorials.Exercises
             int counter = 0;
             if (arrtemp.Length < 0)
                 return false;
-            while (counter < arrtemp.Length-1)
+            while (counter < arrtemp.Length - 1)
             {
                 if (arrtemp[counter] < arrtemp[counter + 1])
                     counter++;
@@ -763,7 +764,7 @@ namespace CSharp_Tutorials.Exercises
             // 60. Write a C# program to calculate the sum of all the integers of a
             // rectangular matrix except those integers which are located below an integer of value 0.
             int[,] arrtemp = arrx;
-            int sum = 0;            
+            int sum = 0;
             for (int i = 0; i <= arrtemp.GetLength(0) - 1; i++)
             {
                 int j = 0;
@@ -801,15 +802,49 @@ namespace CSharp_Tutorials.Exercises
             foreach (var item in arrResult)
                 Console.Write(item);
         }
-        public static void Name(string s)
+        public static string ReverseInParenthesis(string s) // surrender
         {
-            //62. Write a C# program to reverse the strings contained in each pair
-            //of matching parentheses in a given string and also remove the parentheses
-            //within the given string.
+            // 62. Write a C# program to reverse the strings contained in each pair
+            // of matching parentheses in a given string and also remove the parentheses
+            // within the given string.
             string stemp = s;
-            
-
+            Array.Reverse(stemp.ToArray(), stemp.IndexOf('('), stemp.Length - stemp.LastIndexOf(')'));
+            string a = stemp.Remove(stemp.IndexOf('('), 1) + stemp.Remove(stemp.LastIndexOf(')'), 1);
+            return a;
         }
+        #endregion
+        #region Basic Algorithm
+        public static int SumoftwoNumbersBut_TripleResultIfthesame(int x, int y)
+        {
+            // 1. Write a C# Sharp program to compute the sum of the two
+            // given integer values. If the two values are the same, then return triple their sum.
+            int num1 = x;
+            int num2 = y;
+            if (num1 == num2)
+                return (num1 + num2) * 3;
+            return num1 * num2;
+        }
+        public static int AbsoluteDifference(int x)
+        {
+            // 2. Write a C# Sharp program to get the absolute difference
+            // between n and 51. If n is greater than 51 return triple the absolute difference.
+            const int num = 51;            
+            if (x > num)
+                return Math.Abs(x - num) * 3;
+            return Math.Abs(x - num);
+        }
+        public static bool If30andIfSumis30(int x, int y)
+        {
+            // 3. Write a C# Sharp program to check two given integers,
+            // and return true if one of them is 30 or if their sum is 30.
+            int n = x;
+            int i = y;
+            if ((n == 30 || i == 30) || n + i == 30)
+                return true;
+            return false;
+        }
+        #endregion
+
         #region UsefulMethods
         public static double CelsiusToFahrenheit(double celsius)
         {

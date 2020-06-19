@@ -2158,4 +2158,17 @@ namespace CSharp_Tutorials.Class
         }
     }
     #endregion
+    #region Recursion
+    class RecurtionExample
+    {
+        public static void Rec(int x)
+        {
+            if (x == 10)
+                return;
+            Console.WriteLine(x);
+            x++;
+            Rec(x);
+        }
+    }    
+    #endregion
 }
