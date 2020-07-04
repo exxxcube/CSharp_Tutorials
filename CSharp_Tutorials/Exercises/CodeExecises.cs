@@ -10,6 +10,7 @@ using System.Net.Http.Headers;
 using System.Security;
 using System.Net.Mail;
 using System.Data;
+using System.ComponentModel.DataAnnotations;
 
 namespace CSharp_Tutorials.Exercises
 {
@@ -842,6 +843,77 @@ namespace CSharp_Tutorials.Exercises
             if ((n == 30 || i == 30) || n + i == 30)
                 return true;
             return false;
+        }
+        public static bool If10Of100Or200(int n)
+        {
+            // Write a C# Sharp program to check a given integer and
+            // return true if it is within 10 of 100 or 200.
+            int temp = n;
+            if (Math.Abs(temp - 100) <= 10 || Math.Abs(temp - 200) <= 10)
+                return true;
+            return false;
+        }
+        public static string If_else(string s)
+        {
+            // Write a C# Sharp program to create a new string where 'if' is
+            // added to the front of a given string.
+            // If the string already begins with 'if', return the string unchanged.
+            if (s.Substring(0, 2) != "if")
+                return String.Format("if " + s);
+            return s;
+        }
+        public static string RemoveChar(string s, int index_remove)
+        {
+            // 6. Write a C# Sharp program to remove the character in a given position of a given string.
+            // The given position will be in the range 0.. string length -1 inclusive.
+            string temp = s;
+            int inttemp = index_remove;
+            if (s.Length < 0)
+                return null;
+            return s.Remove(inttemp, 1);
+        }
+        public static string ReturnNewString(string s)
+        {
+            //7. Write a C# Sharp program to exchange the first and
+            //last characters in a given string and return the new string.
+            if (s.Length < 0 || s.Length == 1)
+                return s;
+            return String.Format(s[s.Length-1].ToString()+ s.Substring(1,s.Length-2) + s[0]);
+        }
+        public static string FourCopies(string s)
+        {
+            //8. Write a C# Sharp program to create a new string which is 4 copies
+            //of the 2 front characters of a given string.
+            //If the given string length is less than 2 return the original string.
+            if (s.Length < 2)
+                return s;
+            return s.Substring(0, 2) + s.Substring(0, 2) + s.Substring(0, 2) + s.Substring(0, 2);
+        }
+        public static string Add_In_Front_Or_Back(string s)
+        {
+            // 9. Write a C# Sharp program to create a new string with the last char
+            // added at the front and back of a given string of length 1 or more.
+            if (s.Length < 1)
+                return s;
+            return s[s.Length - 1].ToString() + s + s[s.Length - 1].ToString();
+        }
+        public static bool MultipleTo3Or7(int n)
+        {
+            // 10. Write a C# Sharp program to check if a given positive number
+            // is a multiple of 3 or a multiple of 7.
+            if ((n % 3 == 0) || (n % 7 == 0))
+                return true;
+            return false;
+        }
+        public static string ThreeInfrontAndThreeInBack(string s)
+        {
+            // 11. Write a C# Sharp program to create a new string taking the first 3
+            // characters of a given string and return the string with the 3 characters
+            // added at both the front and back.If the given string length is less than 3,
+            // use whatever characters are there.
+            if (s.Length <= 2)
+                return s + s + s;
+            return s.Substring(0, 3) + s + s.Substring(0, 3);
         }
         #endregion
 

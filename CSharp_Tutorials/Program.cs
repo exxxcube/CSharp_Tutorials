@@ -30,7 +30,7 @@ namespace MyNameSpace
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                              
 
-            Console.WriteLine(CodeExecises.If30andIfSumis30(15,10));
+            Console.WriteLine(CodeExecises.ThreeInfrontAndThreeInBack("JS"));
             //char[] a = { 'a', 'b', 'c' };
             //Array.Reverse(a);
             //Console.WriteLine(a);
