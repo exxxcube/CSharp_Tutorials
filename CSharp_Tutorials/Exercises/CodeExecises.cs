@@ -11,6 +11,7 @@ using System.Security;
 using System.Net.Mail;
 using System.Data;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace CSharp_Tutorials.Exercises
 {
@@ -914,6 +915,44 @@ namespace CSharp_Tutorials.Exercises
             if (s.Length <= 2)
                 return s + s + s;
             return s.Substring(0, 3) + s + s.Substring(0, 3);
+        }
+        public static string ReverseByWord(string s)
+        {    
+            string[] arr = s.Split(' ');
+            string temp = null;
+            string[] tempjoin = new string[arr.Length];
+            for (int i = 0; i <= arr.Length - 1; i++)
+            {
+                char[] charArr = arr[i].ToCharArray();
+                Array.Reverse(charArr);
+                foreach (var item in charArr)
+                    temp += item.ToString();
+                tempjoin[i] = temp;
+                temp = null;
+            }
+            return string.Join(' ', tempjoin); // string.Join is so useful to join strings with separator
+        }
+        public static string Capitalize(string s, List<int> idxs)
+        {
+            List<char> tempList = s.ToList();
+            string temp = null;
+            for (int i = 0; i <= idxs.Count - 1; i++)
+            {
+                if (idxs[i] <= tempList.Count - 1)
+                {
+                    char c = Convert.ToChar(s[idxs[i]].ToString().ToUpper());
+                    tempList.RemoveAt(idxs[i]);
+                    tempList.Insert(idxs[i], c);
+                }
+            }
+            foreach (char item in tempList)
+            {
+                temp += item.ToString();
+            }
+            return temp;
+
+            //Shorter code
+            //return string.Concat(s.Select((c, i) => idxs.Contains(i) ? char.ToUpper(c) : c));
         }
         #endregion
 

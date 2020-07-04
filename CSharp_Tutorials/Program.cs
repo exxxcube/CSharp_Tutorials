@@ -28,9 +28,8 @@ namespace MyNameSpace
             //string s = Console.ReadLine();
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
-            //int.TryParse(t, out int y);                              
-
-            Console.WriteLine(CodeExecises.ThreeInfrontAndThreeInBack("JS"));
+            //int.TryParse(t, out int y);                                          
+            Console.WriteLine(CodeExecises.Capitalize("tkudxahsywbpzabngsq", new List<int> { 1,2,100,10000 }));
             //char[] a = { 'a', 'b', 'c' };
             //Array.Reverse(a);
             //Console.WriteLine(a);
