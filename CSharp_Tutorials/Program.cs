@@ -17,6 +17,7 @@ using AbstractInheritance;
 using SortInterface;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using SimpleDelegateExample;
 
 namespace MyNameSpace
 {
@@ -29,7 +30,7 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                                          
-            Console.WriteLine(CodeExecises.Capitalize("tkudxahsywbpzabngsq", new List<int> { 1,2,100,10000 }));
+            Console.WriteLine(CodeExecises.RemoveSmallest(new List<int> { 2, 2, 1, 2, 1 }));
             //char[] a = { 'a', 'b', 'c' };
             //Array.Reverse(a);
             //Console.WriteLine(a);
@@ -58,7 +59,7 @@ namespace MyNameSpace
             #endregion
 
             #region For Object Oriented Programming
-            //SortInterfaceProg.SortInterfaceMain();
+            //SimpleDelegateExampleProg.SimpleDelegateExampleMain(null);
             #endregion
         } 
     }
