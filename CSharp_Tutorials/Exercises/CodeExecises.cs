@@ -980,6 +980,57 @@ namespace CSharp_Tutorials.Exercises
             numbers.RemoveAt(numbers.IndexOf(rslt)); // Remove the number found in the first search
             return numbers;
         }
+        public static List<string> Number(List<string> lines)
+        {
+            List<string> newStringList = new List<string>(); //Declaring New List of string
+            for (int i = 0; i < lines.Count; i++)
+            {
+                string newStringFormat = string.Format("{0}: {1}", i + 1, lines[i]); //Apply the new format
+                newStringList.Add(newStringFormat);
+            }
+            return newStringList; 
+        }
+        public static int ModifiedSum(int[] a, int n)
+        {
+            int[] temp = a.ToArray();            
+            for (int i = 0; i < a.Length; i++)
+                temp[i] = (int)Math.Pow(a[i], n);
+            return temp.Sum() - a.Sum();  
+            //return (int)a.Select(i => Math.Pow(i, n)).Sum() - a.Sum();
+        }
+        public static string GetStrings(string city)
+        {
+            // make string ToLower,Trim and GroupBy it according of how many letter of occurrence            
+            var n = city.Replace(" ", string.Empty).ToLower().GroupBy(i => i);
+            List<string> temp = new List<string>();
+            foreach (var item in n)
+                temp.Add(string.Format("{0}:{1}", item.Key, new string('*', item.Count())));
+            return string.Join(',',temp);
+        }
+        public static string SayHello(string name)
+        {
+            return "Hello, " + name;
+        }
+        public static int AreaOrPerimeter(int l, int w)
+        {
+            //You are given the length and width of a 4 - sided polygon.
+            //The polygon can either be a rectangle or a square.
+            //If it is a square, return its area.If it is a rectangle, return its perimeter.
+            //area_or_perimeter(6, 10)-- > 32
+            //area_or_perimeter(4, 4)-- > 16
+            //Note: for the purposes of this kata you will assume
+            //that it is a square if its length and width are equal, otherwise it is a rectangle.
+            if (l != w)
+                return (l * 2) + (w * 2);
+            return (int)Math.Pow(l,2);
+        }
+        private static string Name(string name)
+        {
+            //return string.Format("Hello, {0} how are you doing today?",name);
+
+            //string Interpolation
+            return $"Hello, {name} how are you doing today?";
+        }
         #endregion
 
         #region UsefulMethods
