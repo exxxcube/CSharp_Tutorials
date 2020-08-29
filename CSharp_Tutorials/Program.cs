@@ -30,7 +30,7 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                                          
-            CodeExecises.MaxProduct(new int [][]{new int []{1, 2},new int []{3, 4}, new int[] { 1,2} });
+            CodeExecises.Greatest_Common_Divisor(54, 24);
             //char[] a = { 'a', 'b', 'c' };
             //Array.Reverse(a);
             //Console.WriteLine(a);

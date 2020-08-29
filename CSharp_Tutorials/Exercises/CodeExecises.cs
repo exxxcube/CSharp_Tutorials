@@ -1024,12 +1024,32 @@ namespace CSharp_Tutorials.Exercises
                 return (l * 2) + (w * 2);
             return (int)Math.Pow(l,2);
         }
-        private static string Name(string name)
+        private static string Interpolation(string name)
         {
             //return string.Format("Hello, {0} how are you doing today?",name);
 
             //string Interpolation
             return $"Hello, {name} how are you doing today?";
+        }
+        public static int Greatest_Common_Divisor(int x, int y)
+        {
+            List<int> xlistofnumbers = new List<int>();
+            List<int> ylistofnumbers = new List<int>();            
+            int greatest;
+            if (x > y)
+                greatest = x;
+            else
+                greatest = y;
+            for (int i = 1; i <= greatest; i++)
+            {
+                if ((x % i) == 0)
+                    xlistofnumbers.Add(i);
+                if ((y % i) == 0)
+                    ylistofnumbers.Add(i);
+            }
+            xlistofnumbers.AddRange(ylistofnumbers);                                                    
+            var rslt = xlistofnumbers.GroupBy(z => z).Where(z => z.Count() > 1).Select(s => s.Key).ToList();
+            return rslt.Max();
         }
         #endregion
 
