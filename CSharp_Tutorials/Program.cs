@@ -30,7 +30,7 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                                          
-            CodeExecises.Greatest_Common_Divisor(54, 24);
+            Console.WriteLine(CodeExecises.AlphabetPosition("The sunset sets at twelve o' clock."));
             //char[] a = { 'a', 'b', 'c' };
             //Array.Reverse(a);
             //Console.WriteLine(a);

@@ -1051,6 +1051,74 @@ namespace CSharp_Tutorials.Exercises
             var rslt = xlistofnumbers.GroupBy(z => z).Where(z => z.Count() > 1).Select(s => s.Key).ToList();
             return rslt.Max();
         }
+        public static IEnumerable<string> FourLettersOnly(string[] names)
+        {
+            List<string> a = new List<string>();
+            a.AddRange(names);
+            List<string> insertFourLettersOnly = new List<string>();
+            for (int i = 0; i < a.Count; i++)
+            {
+                if (a[i].Length == 4)
+                    insertFourLettersOnly.Add(a[i]);
+            }
+            IEnumerable<string> rslt = insertFourLettersOnly;
+            return rslt;
+        }
+        public static int GetSum(int a, int b)
+        {
+            int max = Math.Max(a, b);
+            int min = Math.Min(a, b);
+            int rslt = 0;
+            for (int i = min; i <= max; i++)
+            {
+                rslt += i;
+            }
+            return rslt;
+            #region Old Code
+            //int rslt = 0;
+            //if (a != b)
+            //{
+            //    int[] arr = { a, b };
+            //    Array.Sort(arr);
+            //    for (int i = arr[0]; i <= arr[1]; i++)
+            //    {
+            //        rslt += i;
+            //    }
+            //}
+            //else
+            //    return a;
+            //return rslt;
+            #endregion
+        }
+        public static string AlphabetPosition(string s)
+        {
+            Dictionary<string, string> letterDict = new Dictionary<string, string>();
+            
+            string rslt = null;
+            #region Dictionary of Letters and Its Values
+            letterDict.Add("a", "1"); letterDict.Add("b", "2");
+            letterDict.Add("c", "3"); letterDict.Add("d", "4");
+            letterDict.Add("e", "5"); letterDict.Add("f", "6");
+            letterDict.Add("g", "7"); letterDict.Add("h", "8");
+            letterDict.Add("i", "9"); letterDict.Add("j", "10");
+            letterDict.Add("k", "11"); letterDict.Add("l", "12");
+            letterDict.Add("m", "13"); letterDict.Add("n", "14");
+            letterDict.Add("o", "15"); letterDict.Add("p", "16");
+            letterDict.Add("q", "17"); letterDict.Add("r", "18");
+            letterDict.Add("s", "19"); letterDict.Add("t", "20");
+            letterDict.Add("u", "21"); letterDict.Add("v", "22");
+            letterDict.Add("w", "23"); letterDict.Add("x", "24");
+            letterDict.Add("y", "25"); letterDict.Add("z", "26");
+            #endregion
+            foreach (var item in s.ToLower())
+            {
+                if (char.IsLetter(item))
+                {
+                    rslt += letterDict[item.ToString()]+ " ";
+                }                
+            }                
+            return rslt.Trim();
+        }
         #endregion
 
         #region UsefulMethods
