@@ -30,7 +30,7 @@ namespace MyNameSpace
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
             //int.TryParse(t, out int y);                                          
-            Console.WriteLine(CodeExecises.AlphabetPosition("The sunset sets at twelve o' clock."));
+            CodeExecises.Summation(8);
             //char[] a = { 'a', 'b', 'c' };
             //Array.Reverse(a);
             //Console.WriteLine(a);

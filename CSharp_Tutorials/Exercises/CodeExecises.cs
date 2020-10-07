@@ -1119,6 +1119,65 @@ namespace CSharp_Tutorials.Exercises
             }                
             return rslt.Trim();
         }
+        public static string WhatCentury(string year)
+        {
+
+
+            //int[] num = new int[4];
+            //int i = 0;
+            //string final = "";
+            //string sufx = "";
+            //int compute = 0;
+            //foreach (var item in year)
+            //{
+            //    num[i] = int.Parse(item.ToString());
+            //    i++;
+            //}
+            //if (num[2] == 0 && num[3] == 0)
+            //{
+            //    final = num[0].ToString() + num[1].ToString();
+            //}
+            //else 
+            //{
+            //    final = num[0].ToString() + num[1].ToString();
+            //    compute = Convert.ToInt32(final) + 1;
+            //    final = compute.ToString();
+            //}
+            var x = (int.Parse(year) - 1) / 100 + 1;
+            string sufx = "";
+            if ((x/10) == 1)
+            {
+                sufx = "th";
+            }
+            else
+            {
+                switch ((x % 10))
+                {
+                    case 1:
+                        sufx = "st";
+                        break;
+                    case 2:
+                        sufx = "nd";
+                        break;
+                    case 3:
+                        sufx = "rd";
+                        break;
+                    default:
+                        sufx = "th";
+                        break;
+                }
+            }                                   
+            return x + sufx;
+        }
+        public static int Summation(int num)
+        {
+            int rslt = 0;
+            for (int i = 1; i <= num; i++)
+            {
+                rslt += i;
+            }
+            return rslt;
+        }
         #endregion
 
         #region UsefulMethods
