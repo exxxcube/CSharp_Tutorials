@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleUnitTest", "ConsoleU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProgress", "SimpleProgress\SimpleProgress.csproj", "{76D77A3B-1CA5-4FA4-86A8-FB34852D2DF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator pattern", "Mediator pattern\Mediator pattern.csproj", "{5521DE78-2AEB-4B3B-9C4F-1B35C920604C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator", "Mediator pattern console application\Mediator.csproj", "{B8D3DE5B-E2AF-4252-B36C-D5A83530FD16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{76D77A3B-1CA5-4FA4-86A8-FB34852D2DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76D77A3B-1CA5-4FA4-86A8-FB34852D2DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76D77A3B-1CA5-4FA4-86A8-FB34852D2DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5521DE78-2AEB-4B3B-9C4F-1B35C920604C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5521DE78-2AEB-4B3B-9C4F-1B35C920604C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5521DE78-2AEB-4B3B-9C4F-1B35C920604C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5521DE78-2AEB-4B3B-9C4F-1B35C920604C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8D3DE5B-E2AF-4252-B36C-D5A83530FD16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8D3DE5B-E2AF-4252-B36C-D5A83530FD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8D3DE5B-E2AF-4252-B36C-D5A83530FD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8D3DE5B-E2AF-4252-B36C-D5A83530FD16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

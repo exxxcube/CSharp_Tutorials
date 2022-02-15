@@ -29,12 +29,12 @@ namespace SimpleProgress
         }
         private void startButton_Click(object sender, EventArgs e)
         {
-            UpdateProgressCallback callback = UpdateProgressCallback(this.DoUpdate);
-            // Do something that needs periodic progress reports.
-            // This passes a delegate instance that knows how to update the bar.
-            DoSomethingLengthy(callback);
-            // Clear the bar so that it can be used again.
-            progressBar1.Value = 0;
+            //UpdateProgressCallback callback = UpdateProgressCallback(this.DoUpdate);
+            //// Do something that needs periodic progress reports.
+            //// This passes a delegate instance that knows how to update the bar.
+            //DoSomethingLengthy(callback);
+            //// Clear the bar so that it can be used again.
+            //progressBar1.Value = 0;
         }
     }
 }

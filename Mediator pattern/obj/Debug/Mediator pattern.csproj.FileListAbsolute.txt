@@ -1,0 +1,9 @@
+D:\Projects\C#\CSharp_Tutorials\Mediator pattern\bin\Debug\Mediator pattern.exe.config
+D:\Projects\C#\CSharp_Tutorials\Mediator pattern\bin\Debug\Mediator pattern.exe
+D:\Projects\C#\CSharp_Tutorials\Mediator pattern\bin\Debug\Mediator pattern.pdb
+D:\Projects\C#\CSharp_Tutorials\Mediator pattern\obj\Debug\Mediator pattern.csprojAssemblyReference.cache
+D:\Projects\C#\CSharp_Tutorials\Mediator pattern\obj\Debug\Mediator_pattern.Properties.Resources.resources
+D:\Projects\C#\CSharp_Tutorials\Mediator pattern\obj\Debug\Mediator pattern.csproj.GenerateResource.cache
+D:\Projects\C#\CSharp_Tutorials\Mediator pattern\obj\Debug\Mediator pattern.csproj.CoreCompileInputs.cache
+D:\Projects\C#\CSharp_Tutorials\Mediator pattern\obj\Debug\Mediator pattern.exe
+D:\Projects\C#\CSharp_Tutorials\Mediator pattern\obj\Debug\Mediator pattern.pdb

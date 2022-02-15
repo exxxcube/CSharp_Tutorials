@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "m5k7ZwibPgxcMAZdzCytAutS5ngtLHKvQfcDGI8M+euS9XiUjcsmLLpamGreiiGzLmA00vV17Fe4KvC+ywUlZA==",
+  "dgSpecHash": "Iv82GHVQC+A6af7O+hiMiGoGF/uC6I7Uzr0F6vxwniJ7xwJCT7ZxOt32BZuqXwNHnP1U90M2vvPkBGnEd2HzAA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\C#\\CSharp_Tutorials\\ConsoleUnitTest\\ConsoleUnitTest.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,7 @@
     "C:\\Users\\infoj\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\infoj\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\infoj\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Users\\infoj\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
     "C:\\Users\\infoj\\.nuget\\packages\\nunit3testadapter\\3.16.1\\nunit3testadapter.3.16.1.nupkg.sha512",
     "C:\\Users\\infoj\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\infoj\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",

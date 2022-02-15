@@ -18,6 +18,7 @@ using SortInterface;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using SimpleDelegateExample;
+using CSharp_Tutorials.Exam_Code;
 
 namespace MyNameSpace
 {
@@ -26,14 +27,16 @@ namespace MyNameSpace
         //This is where your program starts.
         static void Main(string[] args)
         {
+            #region Testing a code region
             //string s = Console.ReadLine();
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
-            //int.TryParse(t, out int y);                                          
-            CodeExecises.Summation(8);
+            //int.TryParse(t, out int y);                                                      
             //char[] a = { 'a', 'b', 'c' };
             //Array.Reverse(a);
             //Console.WriteLine(a);
+            Grade12Examination.Exam6();
+            #endregion
 
             #region For Introduction Class Example
             //Collections.UsingReadOnlyCollection(new List<string> { "a", "b" });
@@ -61,6 +64,6 @@ namespace MyNameSpace
             #region For Object Oriented Programming
             //SimpleDelegateExampleProg.SimpleDelegateExampleMain(null);
             #endregion
-        } 
+        }
     }
 }

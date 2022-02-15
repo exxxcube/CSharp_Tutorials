@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Mediator pattern console application/1.0.0": {
+        "runtime": {
+          "Mediator pattern console application.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Mediator pattern console application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

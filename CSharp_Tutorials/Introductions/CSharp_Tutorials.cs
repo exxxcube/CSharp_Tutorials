@@ -90,7 +90,7 @@ namespace CSharp_Tutorials.Class
         public void CharactersAndSpecialCharacters()
         {
             //This is an example of character
-            char c = 'a';
+            //char c = 'a';
             //Examples of Special Characters
             Console.WriteLine("This is\n newline"); // \n is New line
             Console.WriteLine("This is \ttab"); // \t is Tab
