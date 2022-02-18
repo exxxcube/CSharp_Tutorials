@@ -15,9 +15,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\C#\\CSharp_Tutorials\\Mediator pattern console application\\Mediator.csproj",
-      "projectName": "Mediator",
-      "projectPath": "D:\\Projects\\C#\\CSharp_Tutorials\\Mediator pattern console application\\Mediator.csproj",
+      "projectUniqueName": "D:\\Projects\\C#\\CSharp_Tutorials\\Mediator pattern console application\\Mediator Pattern Console.csproj",
+      "projectName": "Mediator Pattern Console",
+      "projectPath": "D:\\Projects\\C#\\CSharp_Tutorials\\Mediator pattern console application\\Mediator Pattern Console.csproj",
       "packagesPath": "C:\\Users\\infoj\\.nuget\\packages\\",
       "outputPath": "D:\\Projects\\C#\\CSharp_Tutorials\\Mediator pattern console application\\obj\\",
       "projectStyle": "PackageReference",

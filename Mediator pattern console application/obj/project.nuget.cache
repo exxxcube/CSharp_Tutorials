@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/aaV1LkfQErBXYq7xTgM5LJL41sCCtnNpPt/0nHcPtP2zJBU8f47E6va4cP4zWdRl2wh0p6wEHSu942uV4bbMA==",
+  "dgSpecHash": "6nWh9xeHbz6pw0ZUXZ7jMkgg5STQ1vobwrRlgW1dy0nedXcDBA/o6VHn2Q6fsHNZOpDf6SPXKcmEPg0I5L0qaw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\C#\\CSharp_Tutorials\\Mediator pattern console application\\Mediator.csproj",
+  "projectFilePath": "D:\\Projects\\C#\\CSharp_Tutorials\\Mediator pattern console application\\Mediator Pattern Console.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
