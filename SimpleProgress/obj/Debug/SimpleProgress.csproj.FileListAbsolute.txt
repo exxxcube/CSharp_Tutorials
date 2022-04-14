@@ -1,7 +1,6 @@
 D:\Projects\C#\CSharp_Tutorials\SimpleProgress\bin\Debug\SimpleProgress.exe.config
 D:\Projects\C#\CSharp_Tutorials\SimpleProgress\bin\Debug\SimpleProgress.exe
 D:\Projects\C#\CSharp_Tutorials\SimpleProgress\bin\Debug\SimpleProgress.pdb
-D:\Projects\C#\CSharp_Tutorials\SimpleProgress\obj\Debug\SimpleProgress.csprojAssemblyReference.cache
 D:\Projects\C#\CSharp_Tutorials\SimpleProgress\obj\Debug\SimpleProgress.Form1.resources
 D:\Projects\C#\CSharp_Tutorials\SimpleProgress\obj\Debug\SimpleProgress.Properties.Resources.resources
 D:\Projects\C#\CSharp_Tutorials\SimpleProgress\obj\Debug\SimpleProgress.csproj.GenerateResource.cache

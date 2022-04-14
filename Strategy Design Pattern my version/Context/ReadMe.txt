@@ -1,0 +1,1 @@
+﻿The job of the context class is to communicate to the client class

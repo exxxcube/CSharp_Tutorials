@@ -1,0 +1,1 @@
+﻿The interface must be inherited in the Classes to recognize the method of the implement interface.

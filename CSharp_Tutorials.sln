@@ -13,7 +13,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator Pattern Winforms",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator Pattern Console", "Mediator pattern console application\Mediator Pattern Console.csproj", "{B8D3DE5B-E2AF-4252-B36C-D5A83530FD16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator behavioral design pattern", "Mediator pattern 2\Mediator behavioral design pattern.csproj", "{454F5C02-7F65-490A-85B6-4B7723038B5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator behavioral design pattern", "Mediator pattern 2\Mediator behavioral design pattern.csproj", "{454F5C02-7F65-490A-85B6-4B7723038B5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Behavioral design patterns", "Behavioral design patterns", "{2A15CE5A-1DD7-431E-93EC-73C89093377E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Testing", "Unit Testing", "{DBDA63B7-7905-4A4F-8902-A9C27D459205}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp Fundamentals", "CSharp Fundamentals", "{C005D015-11A4-4A0F-AB9B-B83BF7217657}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy Design Pattern", "Strategy Design Pattern\Strategy Design Pattern.csproj", "{6C38EF50-574F-4C12-AE11-E37A5E8D3FD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy Design Pattern my version", "Strategy Design Pattern my version\Strategy Design Pattern my version.csproj", "{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +55,27 @@ Global
 		{454F5C02-7F65-490A-85B6-4B7723038B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{454F5C02-7F65-490A-85B6-4B7723038B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{454F5C02-7F65-490A-85B6-4B7723038B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C38EF50-574F-4C12-AE11-E37A5E8D3FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C38EF50-574F-4C12-AE11-E37A5E8D3FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C38EF50-574F-4C12-AE11-E37A5E8D3FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C38EF50-574F-4C12-AE11-E37A5E8D3FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D55AC768-069B-4AB1-BC61-4A9E6A317372} = {C005D015-11A4-4A0F-AB9B-B83BF7217657}
+		{862EF7BE-394E-4F3E-B870-5A464D54A309} = {DBDA63B7-7905-4A4F-8902-A9C27D459205}
+		{76D77A3B-1CA5-4FA4-86A8-FB34852D2DF2} = {C005D015-11A4-4A0F-AB9B-B83BF7217657}
+		{5521DE78-2AEB-4B3B-9C4F-1B35C920604C} = {2A15CE5A-1DD7-431E-93EC-73C89093377E}
+		{B8D3DE5B-E2AF-4252-B36C-D5A83530FD16} = {2A15CE5A-1DD7-431E-93EC-73C89093377E}
+		{454F5C02-7F65-490A-85B6-4B7723038B5E} = {2A15CE5A-1DD7-431E-93EC-73C89093377E}
+		{6C38EF50-574F-4C12-AE11-E37A5E8D3FD4} = {2A15CE5A-1DD7-431E-93EC-73C89093377E}
+		{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0} = {2A15CE5A-1DD7-431E-93EC-73C89093377E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {64791BB8-C53B-41FA-BDCA-95A021122FCA}
