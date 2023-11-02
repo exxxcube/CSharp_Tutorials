@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29123.88
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp_Tutorials", "CSharp_Tutorials\CSharp_Tutorials.csproj", "{D55AC768-069B-4AB1-BC61-4A9E6A317372}"
 EndProject
@@ -23,7 +23,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp Fundamentals", "CSha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy Design Pattern", "Strategy Design Pattern\Strategy Design Pattern.csproj", "{6C38EF50-574F-4C12-AE11-E37A5E8D3FD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy Design Pattern my version", "Strategy Design Pattern my version\Strategy Design Pattern my version.csproj", "{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy Design Pattern my version", "Strategy Design Pattern my version\Strategy Design Pattern my version.csproj", "{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructuresAndAlgorithm", "DataStructuresAndAlgorithm\DataStructuresAndAlgorithm.csproj", "{DA29C5BD-D00C-49B4-BE0F-4D94EF667829}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Preprocessor", "Preprocessor\Preprocessor.csproj", "{407087E8-B9F2-41BA-941B-155D7C851E9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asynchronous Programming", "Asynchronous Programming\Asynchronous Programming.csproj", "{C27DC193-5702-4A6E-B369-1EB34A0D6671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coding Challenge", "Coding Challenge\Coding Challenge.csproj", "{BC7190AA-1021-4BF8-B5CF-173BCA8B3427}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +71,22 @@ Global
 		{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA29C5BD-D00C-49B4-BE0F-4D94EF667829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA29C5BD-D00C-49B4-BE0F-4D94EF667829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA29C5BD-D00C-49B4-BE0F-4D94EF667829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA29C5BD-D00C-49B4-BE0F-4D94EF667829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{407087E8-B9F2-41BA-941B-155D7C851E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407087E8-B9F2-41BA-941B-155D7C851E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407087E8-B9F2-41BA-941B-155D7C851E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407087E8-B9F2-41BA-941B-155D7C851E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C27DC193-5702-4A6E-B369-1EB34A0D6671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C27DC193-5702-4A6E-B369-1EB34A0D6671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C27DC193-5702-4A6E-B369-1EB34A0D6671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C27DC193-5702-4A6E-B369-1EB34A0D6671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7190AA-1021-4BF8-B5CF-173BCA8B3427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7190AA-1021-4BF8-B5CF-173BCA8B3427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7190AA-1021-4BF8-B5CF-173BCA8B3427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7190AA-1021-4BF8-B5CF-173BCA8B3427}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +100,10 @@ Global
 		{454F5C02-7F65-490A-85B6-4B7723038B5E} = {2A15CE5A-1DD7-431E-93EC-73C89093377E}
 		{6C38EF50-574F-4C12-AE11-E37A5E8D3FD4} = {2A15CE5A-1DD7-431E-93EC-73C89093377E}
 		{C0C5AF63-07FD-4D2F-B998-70D2DF92DFE0} = {2A15CE5A-1DD7-431E-93EC-73C89093377E}
+		{DA29C5BD-D00C-49B4-BE0F-4D94EF667829} = {C005D015-11A4-4A0F-AB9B-B83BF7217657}
+		{407087E8-B9F2-41BA-941B-155D7C851E9A} = {C005D015-11A4-4A0F-AB9B-B83BF7217657}
+		{C27DC193-5702-4A6E-B369-1EB34A0D6671} = {C005D015-11A4-4A0F-AB9B-B83BF7217657}
+		{BC7190AA-1021-4BF8-B5CF-173BCA8B3427} = {C005D015-11A4-4A0F-AB9B-B83BF7217657}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {64791BB8-C53B-41FA-BDCA-95A021122FCA}

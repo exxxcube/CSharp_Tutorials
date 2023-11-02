@@ -10,3 +10,16 @@ D:\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_
 D:\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.dll
 D:\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.pdb
 D:\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.genruntimeconfig.cache
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\bin\Debug\netcoreapp2.2\CSharp_Tutorials.deps.json
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\bin\Debug\netcoreapp2.2\CSharp_Tutorials.runtimeconfig.json
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\bin\Debug\netcoreapp2.2\CSharp_Tutorials.runtimeconfig.dev.json
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\bin\Debug\netcoreapp2.2\CSharp_Tutorials.dll
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\bin\Debug\netcoreapp2.2\CSharp_Tutorials.pdb
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.csproj.AssemblyReference.cache
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.GeneratedMSBuildEditorConfig.editorconfig
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.AssemblyInfoInputs.cache
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.AssemblyInfo.cs
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.csproj.CoreCompileInputs.cache
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.dll
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.pdb
+C:\Exxxcube files\Projects\C#\CSharp_Tutorials\CSharp_Tutorials\obj\Debug\netcoreapp2.2\CSharp_Tutorials.genruntimeconfig.cache

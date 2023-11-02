@@ -19,6 +19,9 @@ using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using SimpleDelegateExample;
 using CSharp_Tutorials.Exam_Code;
+using System.Linq;
+using System.Runtime.ExceptionServices;
+using System.Drawing;
 
 namespace MyNameSpace
 {
@@ -28,6 +31,7 @@ namespace MyNameSpace
         static void Main(string[] args)
         {
             #region Testing a code region
+
             //string s = Console.ReadLine();
             //int.TryParse(s, out int x);
             //string t = Console.ReadLine();
@@ -35,7 +39,15 @@ namespace MyNameSpace
             //char[] a = { 'a', 'b', 'c' };
             //Array.Reverse(a);
             //Console.WriteLine(a);
-            Grade12Examination.Exam6();
+            //Grade12Examination.Exam6();
+
+            var result = ArrayDiff(new int[] { 1, 2}, new int[] { 1 });
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
+            
             #endregion
 
             #region For Introduction Class Example
@@ -65,5 +77,27 @@ namespace MyNameSpace
             //SimpleDelegateExampleProg.SimpleDelegateExampleMain(null);
             #endregion
         }
+
+        public static int[] ArrayDiff1(int[] a, int[] b)
+        {                 
+            var result = a.ToList();
+            foreach (var item in b.ToList())
+            {
+                result.RemoveAll(x => x == item);                
+            }
+
+            return result.ToArray();
+        } // important solution
+
+        public static int[] ArrayDiff(int[] a, int[] b)
+        {
+            return a.Where(n => !b.Contains(n)).ToArray();
+
+            //var result = from s in a
+            //             where !b.Contains(s)
+            //             select s;
+            //return result.ToArray();
+        } 
+
     }
 }
