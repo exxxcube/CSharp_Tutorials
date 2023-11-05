@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +54,32 @@ namespace Coding_Challenge
             }
             string newString = sb.ToString();
             return newString;
+        }
+        public static string Add(string a, string b)
+        {
+            BigInteger number1;
+            BigInteger number2;
+            if (BigInteger.TryParse(a, out number1) && BigInteger.TryParse(b, out number2))
+            {                
+                return (number1 + number2).ToString();                
+            }
+            return string.Empty;              
+        }
+        public static string GetReadableTime(int seconds)
+        {
+            //Write a function, which takes a non-negative integer (seconds) as
+            //input and returns the time in a human-readable format (HH:MM:SS)
+
+            //HH = hours, padded to 2 digits, range: 00 - 99
+            //MM = minutes, padded to 2 digits, range: 00 - 59
+            //SS = seconds, padded to 2 digits, range: 00 - 59
+            //The maximum time never exceeds 359999 (99:59:59)
+
+            //You can find some examples in the test fixtures.
+
+            TimeSpan a = TimeSpan.FromSeconds(seconds);                                    
+            return seconds <= 359999? 
+                String.Format("{0:D2}:{1:D2}:{2:D2}", (int)a.TotalHours, a.Minutes, a.Seconds) : string.Empty;
         }
     }
 }
