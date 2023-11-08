@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+    using System.Collections;
+    using System.Collections.Generic;
+using System.Formats.Asn1;
 using System.Linq;
 using System.Numerics;
 using System.Reflection.Metadata.Ecma335;
@@ -80,6 +81,113 @@ namespace Coding_Challenge
             TimeSpan a = TimeSpan.FromSeconds(seconds);                                    
             return seconds <= 359999? 
                 String.Format("{0:D2}:{1:D2}:{2:D2}", (int)a.TotalHours, a.Minutes, a.Seconds) : string.Empty;
+        }
+        public static int Score(int[] dice)
+        {
+            //https://www.codewars.com/kata/5270d0d18625160ada0000e4/train/csharp
+            int totalScore = 0;
+            HashSet<int> set = new HashSet<int>(dice);
+            foreach (var item in set)
+            {                
+                var a = dice.Count(x => x == item);
+
+                switch (item)
+                {
+                    case 1:
+                        switch (a)
+                        {
+                            case 5:
+                                totalScore += (1000 + 200);
+                                break;
+                            case 4:
+                                totalScore += (1000 + 100);
+                                break;
+                            case 3:
+                                totalScore += 1000;
+                                break;
+                            case 2:
+                                totalScore += 200;
+                                break;
+                            case 1:
+                                totalScore += 100;
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch (a)
+                        {                           
+                            case >= 3:
+                                totalScore += 200;
+                                break;                            
+                        }
+                        break;
+                    case 3:
+                        switch (a)
+                        {
+                            case >= 3:
+                                totalScore += 300;
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch (a)
+                        {
+                            case >= 3:
+                                totalScore += 400;
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch (a)
+                        {
+                            case 5:
+                                totalScore += (500 + 100);
+                                break;
+                            case 4:
+                                totalScore += (500 + 50);
+                                break;
+                            case 3:
+                                totalScore += 500;
+                                break;
+                            case 2:
+                                totalScore += 100;
+                                break;
+                            case 1:
+                                totalScore += 50;
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch (a)
+                        {
+                            case >= 3:
+                                totalScore += 600;
+                                break;
+                        }
+                        break;                                        
+                }
+            }            
+            return totalScore;
+        }
+        public static int[] TwoSum(int[] nums, int target)
+        {
+            int checkTotal = 0;
+            for (int i = 0; i <= nums.Length - 1; i++)
+            {
+                for (int j = 0; j <= nums.Length - 1; j++)
+                {
+                    if (i == j)
+                    {
+                        j++;
+                    }                    
+                    checkTotal = nums[i] + nums[j];
+                    if (checkTotal == target)
+                    {
+                        return new int[] { i, j };
+                    }
+                }                             
+            }
+            return new int[] { };
         }
     }
 }

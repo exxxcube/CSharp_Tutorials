@@ -6,7 +6,7 @@ namespace Coding_Challenge
     {
         static void Main(string[] args)
         {
-                CodingSolution.GetReadableTime(0);
+            CodingSolution.TwoSum(new int[] { 3, 2, 3 }, 6);
         }   
     }
 }
