@@ -1,6 +1,6 @@
 ﻿using System;
-    using System.Collections;
-    using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using System.Formats.Asn1;
 using System.Linq;
 using System.Numerics;
@@ -8,6 +8,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Coding_Challenge
 {
@@ -188,6 +189,23 @@ namespace Coding_Challenge
                 }                             
             }
             return new int[] { };
+        }
+        public static bool IsPalindrome(int x)
+        {
+            string a = x.ToString();            
+            var rev = a.ToArray().Reverse();
+            string sb = new string(rev.ToArray());
+            
+            if (a == sb)
+                return true;                        
+            return false;
+        }
+        private void testing(int x)
+        {
+            var a = new Stack<int>();
+
+            for (; x > 0; x /= 10)
+                a.Push(x % 10);
         }
     }
 }

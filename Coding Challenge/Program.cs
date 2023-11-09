@@ -6,7 +6,7 @@ namespace Coding_Challenge
     {
         static void Main(string[] args)
         {
-            CodingSolution.TwoSum(new int[] { 3, 2, 3 }, 6);
+            CodingSolution.IsPalindrome(121);
         }   
     }
 }
