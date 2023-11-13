@@ -8,7 +8,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml.XPath;
 
 namespace Coding_Challenge
 {
@@ -200,12 +200,19 @@ namespace Coding_Challenge
                 return true;                        
             return false;
         }
-        private void testing(int x)
+        public static int RemoveDuplicates(int[] nums)
         {
-            var a = new Stack<int>();
-
-            for (; x > 0; x /= 10)
-                a.Push(x % 10);
+            Array.Sort(nums);            
+            HashSet<int> result = new HashSet<int>(nums);                        
+            int count = 0;
+            Array.Clear(nums);            
+            foreach (int x in result.ToArray())
+            {                
+                nums[count] = x;
+                count++;
+            }
+                
+            return result.Count;
         }
     }
 }
