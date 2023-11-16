@@ -13,17 +13,17 @@ using System.Xml.XPath;
 namespace Coding_Challenge
 {
     internal class CodingSolution
-    {        
+    {
         public static int DuplicateCount(string str)
-        {                                    
+        {
             char[] a = str.ToLower().ToCharArray();
             var s = a.GroupBy(x => x).Select(group => new { Item = group.Key, Count = group.Count() })
-                .Where(itemcount => itemcount.Count > 1).Count();                        
+                .Where(itemcount => itemcount.Count > 1).Count();
             return s;
         }
         public static IEnumerable<T> UniqueInOrder<T>(IEnumerable<T> iterable)
         {
-            List<T> q = new List<T>(iterable);            
+            List<T> q = new List<T>(iterable);
             var a = q.Where((c, index) => index == 0 || !object.Equals(c, q[index - 1]));
             return a.Cast<T>();
         }
@@ -48,11 +48,11 @@ namespace Coding_Challenge
                 { 'y', 'l' }, { 'z', 'm' }
             };
             for (int i = 0; i < sb.Length; i++)
-            {                
+            {
                 if (a.ContainsKey(sb[i]))
-                {                    
+                {
                     sb[i] = Convert.ToChar(a[sb[i]]);
-                }                
+                }
             }
             string newString = sb.ToString();
             return newString;
@@ -62,10 +62,10 @@ namespace Coding_Challenge
             BigInteger number1;
             BigInteger number2;
             if (BigInteger.TryParse(a, out number1) && BigInteger.TryParse(b, out number2))
-            {                
-                return (number1 + number2).ToString();                
+            {
+                return (number1 + number2).ToString();
             }
-            return string.Empty;              
+            return string.Empty;
         }
         public static string GetReadableTime(int seconds)
         {
@@ -79,8 +79,8 @@ namespace Coding_Challenge
 
             //You can find some examples in the test fixtures.
 
-            TimeSpan a = TimeSpan.FromSeconds(seconds);                                    
-            return seconds <= 359999? 
+            TimeSpan a = TimeSpan.FromSeconds(seconds);
+            return seconds <= 359999 ?
                 String.Format("{0:D2}:{1:D2}:{2:D2}", (int)a.TotalHours, a.Minutes, a.Seconds) : string.Empty;
         }
         public static int Score(int[] dice)
@@ -89,7 +89,7 @@ namespace Coding_Challenge
             int totalScore = 0;
             HashSet<int> set = new HashSet<int>(dice);
             foreach (var item in set)
-            {                
+            {
                 var a = dice.Count(x => x == item);
 
                 switch (item)
@@ -116,10 +116,10 @@ namespace Coding_Challenge
                         break;
                     case 2:
                         switch (a)
-                        {                           
+                        {
                             case >= 3:
                                 totalScore += 200;
-                                break;                            
+                                break;
                         }
                         break;
                     case 3:
@@ -165,9 +165,9 @@ namespace Coding_Challenge
                                 totalScore += 600;
                                 break;
                         }
-                        break;                                        
+                        break;
                 }
-            }            
+            }
             return totalScore;
         }
         public static int[] TwoSum(int[] nums, int target)
@@ -180,39 +180,117 @@ namespace Coding_Challenge
                     if (i == j)
                     {
                         j++;
-                    }                    
+                    }
                     checkTotal = nums[i] + nums[j];
                     if (checkTotal == target)
                     {
                         return new int[] { i, j };
                     }
-                }                             
+                }
             }
             return new int[] { };
         }
         public static bool IsPalindrome(int x)
         {
-            string a = x.ToString();            
+            string a = x.ToString();
             var rev = a.ToArray().Reverse();
             string sb = new string(rev.ToArray());
-            
+
             if (a == sb)
-                return true;                        
+                return true;
             return false;
         }
         public static int RemoveDuplicates(int[] nums)
         {
-            Array.Sort(nums);            
-            HashSet<int> result = new HashSet<int>(nums);                        
+            Array.Sort(nums);
+            HashSet<int> result = new HashSet<int>(nums);
             int count = 0;
-            Array.Clear(nums);            
+            Array.Clear(nums);
             foreach (int x in result.ToArray())
-            {                
+            {
                 nums[count] = x;
                 count++;
             }
-                
+
             return result.Count;
+        }
+        public static int RomanToInt(string s)
+        {
+            int a = 0;
+
+            Dictionary<string, int> normalRoman = new Dictionary<string, int>
+            {
+                { "I", 1 },{ "V", 5 }, { "X", 10 }, { "L", 50 },
+                { "C", 100 },{ "D", 500 }, { "M", 1000 },
+            };
+
+            Dictionary<string, int> notSoNormalRoman = new Dictionary<string, int>
+            {
+                { "IV", 4 },{ "IX", 9}, { "XL", 40}, {"XC", 90 },
+                { "CD", 400}, { "CM", 900}
+            };
+
+            foreach (var item in notSoNormalRoman.Keys)
+            {
+                if (s.Contains(item))
+                {
+                    a += notSoNormalRoman[item];
+                    s = s.Remove(s.IndexOf(item), 2);
+                }
+                if (string.IsNullOrEmpty(s))
+                    break;
+            }
+
+            foreach (var item in s)
+            {
+                if (s.Contains(item))
+                {
+                    a += normalRoman[item.ToString()];
+                    s = s.Remove(s.IndexOf(item), 1);
+                }
+                if (string.IsNullOrEmpty(s))
+                    break;
+            }
+
+            return a;
+        }
+        public static int RomanToInt_Refractor(string s)
+        {
+            Dictionary<char, int> Romans = new Dictionary<char, int>();
+
+            Romans['I'] = 1;
+            Romans['V'] = 5;
+            Romans['X'] = 10;
+            Romans['L'] = 50;
+            Romans['C'] = 100;
+            Romans['D'] = 500;
+            Romans['M'] = 1000;
+
+            char[] arr = s.ToCharArray();
+            int nb = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == arr.Length - 1)
+                {
+                    nb += Romans[arr[i]];
+                }
+                else
+                {
+                    if (Romans[arr[i]] < Romans[arr[i + 1]])
+                    {
+                        nb += Romans[arr[i + 1]] - Romans[arr[i]];
+                        i++;
+                    }
+                    else
+                    {
+                        nb += Romans[arr[i]];
+                    }
+                }
+
+            }
+
+            return nb;
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Coding_Challenge
     {
         static void Main(string[] args)
         {
-            CodingSolution.RemoveDuplicates(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 });
+            CodingSolution.RomanToInt_Refractor("MCMXCIV");
         }   
     }
 }
